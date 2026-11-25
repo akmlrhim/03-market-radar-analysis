@@ -121,7 +121,6 @@ terverifikasi.
 ├── app.py                        # entrypoint: page config + st.navigation
 ├── pyproject.toml                # paket, dependensi, konfigurasi ruff/pytest
 ├── requirements.txt              # -e .
-├── requirements-dev.txt          # -e .[dev]
 ├── data/
 │   ├── kompetitor.csv
 │   ├── harga.csv
