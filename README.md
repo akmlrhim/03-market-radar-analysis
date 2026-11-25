@@ -10,7 +10,7 @@ luar dashboard (misalnya hasil penarikan lewat MCP), lalu dimuat ulang.
 ## Menjalankan
 
 ```powershell
-# dari akar proyek
+# dari folder proyek
 .\.venv\Scripts\activate
 pip install -e .
 streamlit run app.py

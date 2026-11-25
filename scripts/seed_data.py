@@ -1,6 +1,6 @@
 ﻿"""Tulis ulang data awal Radar Pasar.
 
-Jalankan dari akar proyek:
+Jalankan dari folder proyek:
 
     python scripts/seed_data.py
 

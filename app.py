@@ -1,6 +1,6 @@
 """Titik masuk Radar Pasar.
 
-Jalankan dari akar proyek:
+Jalankan dari folder proyek:
 
     streamlit run app.py
 
