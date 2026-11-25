@@ -75,7 +75,7 @@ def _recommendations(kompetitor: pd.DataFrame, harga: pd.DataFrame) -> list[str]
     return recommendations[:3]
 
 
-def _status_data(kompetitor: pd.DataFrame, harga: pd.DataFrame, pain: pd.DataFrame) -> None:
+def _status_data(kompetitor: pd.DataFrame, harga: pd.DataFrame) -> None:
     with st.expander("Status dan keterbatasan data"):
         stale = repository.stale_rows()
         if stale.empty:
@@ -101,22 +101,12 @@ def _status_data(kompetitor: pd.DataFrame, harga: pd.DataFrame, pain: pd.DataFra
             st.markdown("**Tanpa harga bulanan numerik**")
             st.markdown(", ".join(tanpa_harga) if tanpa_harga else "—")
 
-        if not pain.empty and "sumber" in pain.columns:
-            sumber = pain["sumber"].fillna("").astype(str)
-            if sumber.str.contains("Contoh", case=False, na=False).any():
-                st.warning(
-                    "Data pain point masih contoh. Ganti dengan hasil wawancara atau kuesioner "
-                    "sebelum dipakai mengambil keputusan.",
-                    icon=":material/science:",
-                )
-
 
 def render() -> None:
     data = repository.load_all()
     kompetitor = data["kompetitor"]
     harga = data["harga"]
     pasar = data["pasar"]
-    pain = data["pain_point"]
 
     components.quality_notice()
     components.intro(
@@ -184,7 +174,7 @@ def render() -> None:
             "Kompetitor dengan harga bulanan",
             f"{stats['count']} paket",
             border=False,
-            help=f"{decimal(stats['coverage'] * 100, 0)}% kompetitor punya harga numerik.",
+            help=f"{decimal(stats['coverage'] * 100, 0)}% kompetitor memiliki harga numerik.",
         )
         st.caption(
             f"{stats['count']} paket bulanan dari {dengan_harga} kompetitor. "
@@ -205,4 +195,4 @@ def render() -> None:
                 alt="Rentang harga rekomendasi per paket",
             )
 
-    _status_data(kompetitor, harga, pain)
+    _status_data(kompetitor, harga)

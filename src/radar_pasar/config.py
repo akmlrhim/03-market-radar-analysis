@@ -14,7 +14,6 @@ TABLE_FILES = {
     "kompetitor": "kompetitor.csv",
     "harga": "harga.csv",
     "pasar": "pasar.csv",
-    "pain_point": "pain_point.csv",
 }
 
 # Data yang lebih lama dari ini dianggap perlu dicek ulang.

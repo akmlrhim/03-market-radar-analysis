@@ -51,21 +51,6 @@ TABLE_COLUMNS: dict[str, list[str]] = {
         "catatan",
         "sumber_url",
     ],
-    "pain_point": [
-        "id",
-        "segmen",
-        "responden",
-        "tema",
-        "masalah",
-        "alat_saat_ini",
-        "budget_bulanan_idr",
-        "hambatan",
-        "sumber",
-        "harga_terlalu_murah",
-        "harga_murah",
-        "harga_mahal",
-        "harga_terlalu_mahal",
-    ],
 }
 
 COLUMN_TYPES: dict[str, dict[str, str]] = {
@@ -108,21 +93,6 @@ COLUMN_TYPES: dict[str, dict[str, str]] = {
         "sumber": "text",
         "catatan": "text",
         "sumber_url": "text",
-    },
-    "pain_point": {
-        "id": "int",
-        "segmen": "text",
-        "responden": "text",
-        "tema": "text",
-        "masalah": "text",
-        "alat_saat_ini": "text",
-        "budget_bulanan_idr": "int",
-        "hambatan": "text",
-        "sumber": "text",
-        "harga_terlalu_murah": "int",
-        "harga_murah": "int",
-        "harga_mahal": "int",
-        "harga_terlalu_mahal": "int",
     },
 }
 

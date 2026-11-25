@@ -64,7 +64,7 @@ def price_frame(kompetitor: pd.DataFrame, harga: pd.DataFrame) -> pd.DataFrame:
 
 
 def monthly_prices(kompetitor: pd.DataFrame, harga: pd.DataFrame) -> pd.DataFrame:
-    """Hanya paket yang punya ekuivalen bulanan."""
+    """Hanya paket yang memiliki ekuivalen bulanan."""
     frame = price_frame(kompetitor, harga)
     if frame.empty:
         return frame

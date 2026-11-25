@@ -17,7 +17,6 @@ from radar_pasar.data import repository
 from radar_pasar.presentation.pages import (
     analisis_harga,
     gap_rekomendasi,
-    pain_point,
     peta_kompetitor,
     potensi_pasar,
     ringkasan,
@@ -63,13 +62,6 @@ pages = st.navigation(
                 icon=":material/public:",
                 help="Hitung TAM, SAM, dan SOM dengan asumsi yang bisa diubah.",
                 url_path="potensi-pasar",
-            ),
-            st.Page(
-                pain_point.render,
-                title="Pain point",
-                icon=":material/forum:",
-                help="Peringkat masalah, kemauan bayar, dan analisis Van Westendorp.",
-                url_path="pain-point",
             ),
             st.Page(
                 gap_rekomendasi.render,

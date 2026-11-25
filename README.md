@@ -41,7 +41,6 @@ ruff check .
 | Peta kompetitor | Filter, detail per kompetitor, matriks fitur |
 | Analisis harga | Bar, scatter, box plot, biaya tersembunyi, simulator harga |
 | Potensi pasar | TAM/SAM/SOM dengan slider, distribusi UMKM, sumber |
-| Pain point | Tema masalah, kemauan bayar, hambatan, Van Westendorp |
 | Gap dan rekomendasi | Celah pasar otomatis, posisi harga vs fitur, rekomendasi paket |
 
 ## Data
@@ -74,30 +73,24 @@ Setiap baris kompetitor dan harga menyimpan `sumber_url` dan `tanggal_cek`.
 ### Catatan penting
 
 - **Harga berubah cepat.** Cek ulang halaman resmi sebelum memakai angka.
-- **7 dari 12 kompetitor** punya harga bulanan numerik; sisanya memilih jalur
+- **7 dari 12 kompetitor** memiliki harga bulanan numerik; sisanya memilih jalur
   sales. Median paket bulanan Rp399.000, termurah Rp22.000 (Wablas Nano),
   tertinggi Rp3.000.000 (Canggih.AI Growth).
 - **Kategori tidak selalu sebanding.** Wablas (WhatsApp Gateway) dan majoo
   (POS UMKM) dijual dengan model berbeda dari langganan AI agent. Gunakan
   filter kategori di halaman Analisis harga.
-- **Angka UMKM punya dua seri.** SIDT-UMKM 2025 (30,21 juta, non-pertanian)
+- **Angka UMKM memiliki dua seri.** SIDT-UMKM 2025 (30,21 juta, non-pertanian)
   berbeda dari seri lama 65,4 juta yang masih umum dikutip. Jangan campur.
-- **Data pain point masih contoh.** 14 baris di `data/pain_point.csv` hanya
-  dipakai untuk mengisi tampilan. Ganti dengan hasil wawancara/kuesioner. Halaman Pain point
-  menampilkan peringatan selama sumbernya mengandung kata "Contoh".
 - **Rekomendasi harga** dihitung dari persentil harga kompetitor, bukan survei
   kemauan bayar. Validasi sebelum dipublikasikan.
 
 ### Kolom tambahan di luar PRD
 
 - `pasar.sumber_url` untuk melacak URL sumber.
-- `pain_point.tema` untuk mengelompokkan masalah (dipakai di peringkat).
-- `pain_point.harga_terlalu_murah`, `harga_murah`, `harga_mahal`,
-  `harga_terlalu_mahal` untuk analisis Van Westendorp.
 
 ### Memperbarui data
 
-Dashboard tidak punya formulir isian, unggah, atau ekspor. Alurnya:
+Dashboard tidak memiliki formulir isian, unggah, atau ekspor. Alurnya:
 
 1. Tarik data baru (mis. lewat MCP) dan tulis ulang CSV di `data/`.
 2. Pastikan `sumber_url` dan `tanggal_cek` terisi serta statusnya
@@ -124,8 +117,7 @@ terverifikasi.
 ├── data/
 │   ├── kompetitor.csv
 │   ├── harga.csv
-│   ├── pasar.csv
-│   └── pain_point.csv
+│   └── pasar.csv
 ├── src/radar_pasar/
 │   ├── config.py                 # path data, judul, ambang data kedaluwarsa
 │   ├── data/
@@ -136,7 +128,6 @@ terverifikasi.
 │   │   ├── pricing.py
 │   │   ├── features.py
 │   │   ├── market.py
-│   │   ├── pain.py
 │   │   └── gaps.py
 │   └── presentation/
 │       ├── charts.py             # chart Altair
@@ -146,13 +137,11 @@ terverifikasi.
 │           ├── peta_kompetitor.py
 │           ├── analisis_harga.py
 │           ├── potensi_pasar.py
-│           ├── pain_point.py
 │           └── gap_rekomendasi.py
 ├── scripts/seed_data.py
 ├── tests/
 │   ├── test_pricing.py
 │   ├── test_market.py
-│   ├── test_pain.py
 │   ├── test_schema.py
 │   └── test_data.py
 ├── .streamlit/config.toml        # tema
