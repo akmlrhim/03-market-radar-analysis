@@ -1,0 +1,125 @@
+# Tema Radar Pasar: dashboard padat, tetap mendukung mode terang/gelap.
+# Nilai mengikuti template dense-dashboard bawaan Streamlit.
+
+[theme]
+showWidgetBorder = true
+showSidebarBorder = true
+baseRadius = "6px"
+buttonRadius = "6px"
+font = "'Source Sans 3':https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap"
+headingFont = "'Source Sans 3':https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@600;700&display=swap"
+codeFont = "'JetBrains Mono':https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
+baseFontSize = 14
+baseFontWeight = 400
+codeFontSize = "13px"
+headingFontSizes = ["28px", "22px", "18px", "16px", "14px", "12px"]
+headingFontWeights = [700, 600, 600, 600, 500, 500]
+linkUnderline = false
+paddingTop = "0.5rem"
+paddingBottom = "3rem"
+
+[theme.light]
+primaryColor = "#0F766E"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F1F5F9"
+codeBackgroundColor = "#F1F5F9"
+textColor = "#0F172A"
+linkColor = "#0F766E"
+borderColor = "#CBD5E1"
+codeTextColor = "#334155"
+greenColor = "#047857"
+redColor = "#DC2626"
+yellowColor = "#B45309"
+orangeColor = "#C2410C"
+blueColor = "#0F766E"
+violetColor = "#6D28D9"
+grayColor = "#64748B"
+chartCategoricalColors = [
+    "#0F766E",
+    "#0369A1",
+    "#B45309",
+    "#6D28D9",
+    "#DC2626",
+    "#047857",
+    "#64748B",
+    "#C2410C",
+]
+chartSequentialColors = [
+    "#F0FDFA",
+    "#CCFBF1",
+    "#99F6E4",
+    "#5EEAD4",
+    "#2DD4BF",
+    "#14B8A6",
+    "#0D9488",
+    "#0F766E",
+    "#115E59",
+    "#134E4A",
+]
+dataframeBorderColor = "#CBD5E1"
+dataframeHeaderBackgroundColor = "#E2E8F0"
+dataframeHeaderTextColor = "#0F172A"
+
+[theme.dark]
+primaryColor = "#14B8A6"
+backgroundColor = "#0F172A"
+secondaryBackgroundColor = "#1E293B"
+codeBackgroundColor = "#1E293B"
+textColor = "#F1F5F9"
+linkColor = "#5EEAD4"
+borderColor = "#334155"
+codeTextColor = "#CBD5E1"
+greenColor = "#34D399"
+redColor = "#F87171"
+yellowColor = "#FBBF24"
+orangeColor = "#FB923C"
+blueColor = "#38BDF8"
+violetColor = "#A78BFA"
+grayColor = "#94A3B8"
+chartCategoricalColors = [
+    "#2DD4BF",
+    "#38BDF8",
+    "#FBBF24",
+    "#A78BFA",
+    "#F87171",
+    "#34D399",
+    "#94A3B8",
+    "#FB923C",
+]
+chartSequentialColors = [
+    "#134E4A",
+    "#115E59",
+    "#0F766E",
+    "#0D9488",
+    "#14B8A6",
+    "#2DD4BF",
+    "#5EEAD4",
+    "#99F6E4",
+    "#CCFBF1",
+    "#F0FDFA",
+]
+dataframeBorderColor = "#334155"
+dataframeHeaderBackgroundColor = "#1E293B"
+dataframeHeaderTextColor = "#F8FAFC"
+
+[theme.sidebar]
+paddingTop = "0.5rem"
+paddingBottom = "1.5rem"
+
+[theme.light.sidebar]
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F1F5F9"
+codeBackgroundColor = "#E2E8F0"
+textColor = "#0F172A"
+borderColor = "#CBD5E1"
+primaryColor = "#0F766E"
+linkColor = "#0F766E"
+
+[theme.dark.sidebar]
+backgroundColor = "#020617"
+secondaryBackgroundColor = "#1E293B"
+codeBackgroundColor = "#1E293B"
+textColor = "#F1F5F9"
+borderColor = "#334155"
+primaryColor = "#14B8A6"
+linkColor = "#5EEAD4"
