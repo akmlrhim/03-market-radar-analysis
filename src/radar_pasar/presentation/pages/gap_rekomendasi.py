@@ -37,7 +37,7 @@ def render() -> None:
     with st.container(border=True):
         st.subheader("Celah pasar")
         if gaps.empty:
-            components.empty_state("Tidak ada gap yang bisa disimpulkan dari data saat ini.")
+            components.empty_state("Tidak ada celah yang bisa disimpulkan dari data saat ini.")
         else:
             for _, row in gaps.iterrows():
                 prioritas = str(row["prioritas"]).lower()
@@ -109,9 +109,9 @@ def render() -> None:
 
         cheapest = float(monthly["harga_bulanan"].min())
         st.markdown(
-            f"- **Starter** di persentil 25 mendekati harga masuk pasar ({rupiah(cheapest)} adalah "
-            "paket termurah yang tercatat).\n"
-            f"- **Pro** di median, posisi yang paling ramai dan mudah dibandingkan.\n"
+            f"- **Starter** di persentil 25, dekat harga masuk pasar; paket termurah yang "
+            f"tercatat {rupiah(cheapest)}.\n"
+            "- **Pro** di median, posisi paling ramai dan paling mudah dibandingkan.\n"
             "- **Business** di persentil 75, untuk fitur dan dukungan yang lebih lengkap.\n"
             f"- Posisi harga dihitung ulang pada {len(monthly)} paket; "
             f"persentil paket Starter saat ini {decimal(price_percentile(monthly, tiers[0]['harga']), 0)}."

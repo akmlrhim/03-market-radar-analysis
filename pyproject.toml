@@ -36,5 +36,5 @@ target-version = "py311"
 select = ["E", "F", "I", "UP", "B", "SIM"]
 
 [tool.ruff.lint.per-file-ignores]
-# Data seed berisi teks panjang dari halaman sumber; biarkan satu baris per baris.
+# Data awal berisi teks panjang dari halaman sumber; biarkan satu baris per baris.
 "scripts/seed_data.py" = ["E501"]

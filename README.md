@@ -4,8 +4,8 @@ Dashboard riset kompetitor, pasar, dan harga untuk produk digital dan AI agent
 Impost Teknologi Indonesia. Target segmen: UMKM dan freelancer.
 
 Dibangun dengan Streamlit + pandas + Altair. Data disimpan sebagai CSV di
-`data/` dan bersifat **baca-saja** dari sisi aplikasi: pembaruan dilakukan di
-luar dashboard (misalnya hasil penarikan lewat MCP), lalu dimuat ulang.
+`data/` dan hanya dibaca oleh aplikasi: pembaruan dilakukan di luar dashboard
+(misalnya hasil penarikan lewat MCP), lalu dimuat ulang.
 
 ## Menjalankan
 
@@ -42,11 +42,11 @@ ruff check .
 | Analisis harga | Bar, scatter, box plot, biaya tersembunyi, simulator harga |
 | Potensi pasar | TAM/SAM/SOM dengan slider, distribusi UMKM, sumber |
 | Pain point | Tema masalah, kemauan bayar, hambatan, Van Westendorp |
-| Gap dan rekomendasi | Gap otomatis, posisi harga vs fitur, rekomendasi paket |
+| Gap dan rekomendasi | Celah pasar otomatis, posisi harga vs fitur, rekomendasi paket |
 
 ## Data
 
-Data seed diisi dari riset 25 November 2026: **12 kompetitor** dan **35 baris
+Data awal diisi dari riset 25 November 2026: **12 kompetitor** dan **35 baris
 harga**. Sumber utama:
 
 - Halaman harga dan produk resmi kompetitor (Cekat.ai, Mekari Qontak, Qiscus,
@@ -83,7 +83,7 @@ Setiap baris kompetitor dan harga menyimpan `sumber_url` dan `tanggal_cek`.
 - **Angka UMKM punya dua seri.** SIDT-UMKM 2025 (30,21 juta, non-pertanian)
   berbeda dari seri lama 65,4 juta yang masih umum dikutip. Jangan campur.
 - **Data pain point masih contoh.** 14 baris di `data/pain_point.csv` hanya
-  mengisi tampilan. Ganti dengan hasil wawancara/kuesioner. Halaman Pain point
+  dipakai untuk mengisi tampilan. Ganti dengan hasil wawancara/kuesioner. Halaman Pain point
   menampilkan peringatan selama sumbernya mengandung kata "Contoh".
 - **Rekomendasi harga** dihitung dari persentil harga kompetitor, bukan survei
   kemauan bayar. Validasi sebelum dipublikasikan.
@@ -97,7 +97,7 @@ Setiap baris kompetitor dan harga menyimpan `sumber_url` dan `tanggal_cek`.
 
 ### Memperbarui data
 
-Dashboard tidak punya form input, unggah, atau ekspor. Alurnya:
+Dashboard tidak punya formulir isian, unggah, atau ekspor. Alurnya:
 
 1. Tarik data baru (mis. lewat MCP) dan tulis ulang CSV di `data/`.
 2. Pastikan `sumber_url` dan `tanggal_cek` terisi serta statusnya
@@ -105,7 +105,7 @@ Dashboard tidak punya form input, unggah, atau ekspor. Alurnya:
 3. Jalankan `python -m pytest -q` untuk memastikan integritas data.
 4. Tekan **Muat ulang data** di sidebar (cache dibersihkan, data dibaca ulang).
 
-Untuk mengembalikan data seed:
+Untuk mengembalikan data awal:
 
 ```powershell
 .\.venv\Scripts\python.exe scripts\seed_data.py
@@ -164,7 +164,7 @@ terverifikasi.
 - Layout `src/` dengan `pyproject.toml`; jalankan `pip install -e .` sekali
   agar paket `radar_pasar` bisa diimpor.
 - Navigasi memakai `st.navigation` + `st.Page(callable)`, bukan folder `pages/`
-  yang dideteksi otomatis. Tidak ada import relatif yang rapuh.
+  yang dideteksi otomatis. Tidak ada import relatif yang rawan rusak.
 - Lapisan `domain/` tidak menyentuh Streamlit sehingga bisa diuji tanpa
   runtime; hanya `data/repository.py` dan `presentation/` yang memakai API
   Streamlit, termasuk `st.cache_data` (TTL 5 menit + tombol muat ulang).
@@ -188,4 +188,4 @@ python3 -m venv .venv
 ```
 
 Jalankan lewat systemd dan taruh Nginx di depannya. Folder `data/` hanya perlu
-dibaca; pembaruan dilakukan di luar service.
+dibaca; pembaruan dilakukan di luar layanan.

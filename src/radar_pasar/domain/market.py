@@ -76,7 +76,7 @@ def market_model(
 
 
 def stage_rows(model: MarketModel) -> list[tuple[str, float]]:
-    """Tahapan funnel dari total pasar sampai pengguna SOM."""
+    """Tahapan corong pasar dari total UMKM sampai pengguna SOM."""
     return [
         ("Total UMKM", model.total_umkm),
         ("Target segmen", model.target_umkm),

@@ -766,7 +766,7 @@ PASAR = [
         "satuan": "Rp per bulan",
         "tahun": 2026,
         "sumber": "Asumsi riset awal",
-        "catatan": "Belum hasil survei. Benchmark harga entry kompetitor Rp99.000-Rp499.000.",
+        "catatan": "Belum hasil survei. Harga paket termurah kompetitor Rp99.000-Rp499.000.",
         "sumber_url": "",
     },
     {

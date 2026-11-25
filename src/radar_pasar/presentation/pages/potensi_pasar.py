@@ -49,7 +49,7 @@ def render() -> None:
     components.quality_notice()
     components.intro(
         "Hitung TAM, SAM, dan SOM dari jumlah UMKM dan ARPU bulanan. Semua asumsi bisa diubah; "
-        "angka default diambil dari CSV atau asumsi riset awal."
+        "nilai awalnya diambil dari CSV atau asumsi riset awal."
     )
 
     if pasar.empty:
@@ -82,7 +82,7 @@ def render() -> None:
             min_value=1,
             max_value=100,
             value=max(1, min(100, int(round(adopsi)))),
-            help="Default mengikuti adopsi AI di survei UMKM. Sampelnya kecil, jadi tetap asumsi.",
+            help="Nilai awal mengikuti adopsi AI dari survei UMKM. Sampelnya kecil, jadi tetap asumsi.",
         )
         share = baris[3].slider(
             "Pangsa SOM (%)",
@@ -90,7 +90,7 @@ def render() -> None:
             max_value=20.0,
             value=2.0,
             step=0.1,
-            help="Porsi pasar siap AI yang realistis direbut dalam horizon rencana.",
+            help="Porsi pasar siap AI yang realistis direbut dalam periode rencana.",
         )
         arpu_default = max(10_000, min(2_000_000, int(budget) // 10_000 * 10_000))
         arpu = baris[4].slider(
@@ -147,7 +147,7 @@ def render() -> None:
                 alt="Distribusi jumlah UMKM menurut skala usaha",
             )
             st.caption(
-                "Hampir seluruh UMKM adalah usaha mikro. Produk entry harus muat di budget "
+                "Hampir seluruh UMKM adalah usaha mikro. Produk yang masuk harus sesuai anggaran "
                 "dan waktu setup segmen ini."
             )
 

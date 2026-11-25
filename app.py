@@ -37,7 +37,7 @@ pages = st.navigation(
                 ringkasan.render,
                 title="Ringkasan",
                 icon=":material/dashboard:",
-                help="Kartu metrik utama, temuan, rekomendasi, dan status kesegaran data.",
+                help="Kartu metrik utama, temuan, rekomendasi, dan status pembaruan data.",
                 url_path="ringkasan",
                 default=True,
             ),
@@ -94,7 +94,7 @@ with st.sidebar:
     st.markdown(f"**{last_checked.strftime('%d %b %Y') if last_checked else 'Belum ada'}**")
     st.caption(
         f"{quality['competitor_count']} kompetitor · "
-        f"{quality['competitors_with_price']} punya harga tercatat"
+        f"{quality['competitors_with_price']} dengan harga tercatat"
     )
     if quality["unverified_count"]:
         st.caption(f":orange[{quality['unverified_count']} belum terverifikasi]")

@@ -203,7 +203,7 @@ def market_stage_bar(model: MarketModel) -> alt.Chart | None:
 
 
 def indicator_bar(frame: pd.DataFrame) -> alt.Chart | None:
-    """Batang indikator pasar yang sudah diseleksi halaman."""
+    """Batang indikator pasar yang sudah disaring oleh halaman."""
     if frame.empty or not {"indikator", "nilai"}.issubset(frame.columns):
         return None
 

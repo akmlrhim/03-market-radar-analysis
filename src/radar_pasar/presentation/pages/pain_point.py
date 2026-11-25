@@ -61,7 +61,7 @@ def render() -> None:
     with st.container(horizontal=True):
         st.metric("Responden", number(len(pain)), border=True)
         st.metric("Segmen", number(segmen.nunique()), border=True)
-        st.metric("Median budget", rupiah(budget.median()), border=True, help="Kemauan bayar bulanan.")
+        st.metric("Median anggaran", rupiah(budget.median()), border=True, help="Kemauan bayar bulanan.")
 
     ranking = pain_rankings(pain)
     hambatan = hambatan_counts(pain)
@@ -92,10 +92,10 @@ def render() -> None:
         if chart is not None:
             st.altair_chart(chart, alt="Sebaran kemauan bayar bulanan per segmen")
             st.caption(
-                "Rentang mengikuti budget bulanan yang disebut responden, bukan harga paket kompetitor."
+                "Rentang mengikuti anggaran bulanan yang disebut responden, bukan harga paket kompetitor."
             )
         else:
-            components.empty_state("Budget bulanan responden belum diisi.")
+            components.empty_state("Anggaran bulanan responden belum diisi.")
 
     with st.container(border=True):
         st.subheader("Van Westendorp")

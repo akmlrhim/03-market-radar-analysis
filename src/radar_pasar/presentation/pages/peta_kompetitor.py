@@ -40,7 +40,9 @@ def _table(frame: pd.DataFrame) -> None:
             "Kategori": frame["kategori"].fillna("").astype(str),
             "Segmen": frame["segmen_target"].fillna("").astype(str),
             "Kota": frame["kota_basis"].fillna("").astype(str),
-            "Berdiri": frame["tahun_berdiri"].map(lambda value: str(int(value)) if pd.notna(value) else "—"),
+            "Tahun berdiri": frame["tahun_berdiri"].map(
+                lambda value: str(int(value)) if pd.notna(value) else "—"
+            ),
             "Fitur": frame["id"].map(lambda value: counts.get(int(value), 0) if pd.notna(value) else 0),
             "Situs": frame["website"].fillna("").astype(str),
         }

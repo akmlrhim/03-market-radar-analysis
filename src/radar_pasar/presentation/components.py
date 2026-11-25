@@ -39,7 +39,7 @@ def format_date(value: Any) -> str:
 
 
 def quality_notice() -> None:
-    """Peringatan singkat soal kesegaran dan status verifikasi data."""
+    """Peringatan singkat soal pembaruan dan status verifikasi data."""
     quality = repository.quality_report()
     parts = [
         f"Data dicek {format_date(quality['last_checked'])}",

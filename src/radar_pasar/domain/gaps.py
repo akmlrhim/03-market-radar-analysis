@@ -184,7 +184,7 @@ def _feature_whitespace(kompetitor: pd.DataFrame) -> list[dict[str, object]]:
 
 
 def gap_findings(kompetitor: pd.DataFrame, harga: pd.DataFrame) -> pd.DataFrame:
-    """Daftar gap beserta bukti dan prioritas yang bisa ditindaklanjuti."""
+    """Daftar celah beserta bukti dan prioritas yang bisa ditindaklanjuti."""
     if kompetitor.empty:
         return _empty()
 
