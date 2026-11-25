@@ -37,7 +37,6 @@ pages = st.navigation(
                 title="Ringkasan",
                 icon=":material/dashboard:",
                 help="Kartu metrik utama, temuan, rekomendasi, dan status pembaruan data.",
-                url_path="ringkasan",
                 default=True,
             ),
         ],
