@@ -1,0 +1,12 @@
+id,indikator,nilai,satuan,tahun,sumber,catatan,sumber_url
+1,Jumlah UMKM non-pertanian,30.21,Juta usaha,2025,Kementerian UMKM (SIDT-UMKM),"Data administratif per 31 Des 2025. Seri lama 65,4 juta memakai basis dan metodologi berbeda.",https://kadin.id/data-dan-statistik/umkm-indonesia
+2,Kontribusi UMKM ke PDB,61.07,Persen,2024,Kementerian UMKM,"Angka yang sering dikutip 61,07%; pembulatan ke 61%.",https://umkm.go.id
+3,Freelancer dan pekerja bebas,36.0,Juta orang,2025,BPS Sakernas Agustus 2025,"Definisi pekerja bebas, bukan hanya freelancer digital.",https://www.bps.go.id
+4,UMKM di ekosistem digital,27.0,Juta usaha,2023,Kemenkop UKM / Komdigi,"Angka onboarding media sosial dan marketplace; basis seri lama, tidak sebanding langsung dengan 30,21 juta SIDT.",https://www.komdigi.go.id
+5,Adopsi AI di UMKM,67.65,Persen,2025,Survei UKMINDONESIA x ICCI (n=204),Sampel kecil dan cenderung melek digital; jangan digeneralisasi ke seluruh UMKM.,https://undercover.co.id/research/adopsi-ai-dan-transformasi-digital-umkm-indonesia
+6,Budget software UMKM,150000.0,Rp per bulan,2026,Asumsi riset awal,Belum hasil survei. Benchmark harga entry kompetitor Rp99.000-Rp499.000.,
+7,Budget software freelancer,75000.0,Rp per bulan,2026,Asumsi riset awal,Belum hasil survei; segmen freelancer perlu divalidasi terpisah.,
+8,UMKM yang siap bayar AI agent,10.0,Persen,2026,Asumsi model,Dipakai sebagai slider SOM; ganti setelah wawancara.,
+9,UMKM skala mikro,30.119928,Juta usaha,2025,Kementerian UMKM (SIDT-UMKM),"99,70% dari total UMKM non-pertanian.",https://kadin.id/data-dan-statistik/umkm-indonesia
+10,UMKM skala kecil,0.073828,Juta usaha,2025,Kementerian UMKM (SIDT-UMKM),"73.828 unit atau 0,24% dari total.",https://kadin.id/data-dan-statistik/umkm-indonesia
+11,UMKM skala menengah,0.015313,Juta usaha,2025,Kementerian UMKM (SIDT-UMKM),"15.313 unit atau 0,05% dari total.",https://kadin.id/data-dan-statistik/umkm-indonesia
