@@ -25,6 +25,11 @@ Atau langsung:
 Buka `http://localhost:8501`. Tidak ada login: dashboard dijalankan lokal atau di
 VPS internal.
 
+Jika muncul `ModuleNotFoundError: No module named 'radar_pasar'`, berarti
+perintah `streamlit` berasal dari Python global, bukan dari `.venv`. Jalankan
+`.\.venv\Scripts\streamlit.exe run app.py`, atau pasang paket di environment
+yang aktif dengan `pip install -e .`.
+
 ### Pengembangan
 
 ```powershell
@@ -45,12 +50,13 @@ ruff check .
 
 ## Data
 
-Data awal diisi dari riset 25 November 2026: **12 kompetitor** dan **35 baris
+Data awal diisi dari riset 25-26 November 2026: **22 kompetitor** dan **68 baris
 harga**. Sumber utama:
 
 - Halaman harga dan produk resmi kompetitor (Cekat.ai, Mekari Qontak, Qiscus,
   Botika, Canggih.AI, Dripsender, Kata.ai, Meeting.ai/Bahasa.ai, Sagara
-  Technology, Kelas.com, Wablas, majoo).
+  Technology, Kelas.com, Wablas, majoo, Convia, Weaku, FirstCRM, Core
+  Freelancers, Templatku.com, MySkill, Sahut, Spicelab, Mahirusaha, Mobichat).
 - Kementerian UMKM / SIDT-UMKM melalui publikasi Kadin: 30,21 juta UMKM
   non-pertanian per 31 Desember 2025.
 - BPS Sakernas Agustus 2025: 36 juta pekerja bebas/freelancer.
@@ -73,12 +79,19 @@ Setiap baris kompetitor dan harga menyimpan `sumber_url` dan `tanggal_cek`.
 ### Catatan penting
 
 - **Harga berubah cepat.** Cek ulang halaman resmi sebelum memakai angka.
-- **7 dari 12 kompetitor** memiliki harga bulanan numerik; sisanya memilih jalur
-  sales. Median paket bulanan Rp399.000, termurah Rp22.000 (Wablas Nano),
-  tertinggi Rp3.000.000 (Canggih.AI Growth).
-- **Kategori tidak selalu sebanding.** Wablas (WhatsApp Gateway) dan majoo
-  (POS UMKM) dijual dengan model berbeda dari langganan AI agent. Gunakan
-  filter kategori di halaman Analisis harga.
+- **16 dari 22 kompetitor** memiliki harga bulanan numerik; sisanya memilih
+  jalur sales. Median paket bulanan Rp369.500. Paket bulanan termurah Rp22.000
+  (Wablas Nano); ekuivalen bulanan terendah Rp14.917 berasal dari paket tahunan
+  promo MySkill. Paket tertinggi Rp15.000.000 (Spicelab Enterprise, harga
+  mulai dari).
+- **Kategori tidak selalu sebanding.** Wablas (WhatsApp Gateway), majoo
+  (POS UMKM), Templatku.com (produk digital sekali beli), dan MySkill
+  (e-learning) dijual dengan model berbeda dari langganan AI agent. Gunakan
+  filter kategori di halaman Analisis harga sebelum membandingkan.
+- **Verifikasi 26 November 2026.** Competitor baru diambil hanya dari halaman
+  harga resmi masing-masing: Convia, Weaku, FirstCRM, Core Freelancers,
+  Templatku.com, MySkill, Sahut, Spicelab, Mahirusaha, dan Mobichat. Tidak ada
+  angka dari artikel pihak ketiga.
 - **Angka UMKM memiliki dua seri.** SIDT-UMKM 2025 (30,21 juta, non-pertanian)
   berbeda dari seri lama 65,4 juta yang masih umum dikutip. Jangan campur.
 - **Rekomendasi harga** dihitung dari persentil harga kompetitor, bukan survei
