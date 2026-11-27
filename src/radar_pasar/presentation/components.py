@@ -78,6 +78,40 @@ def _bulanan(value: Any) -> str:
     return rupiah(float(number_value))
 
 
+def _price_columns(frame: pd.DataFrame) -> dict[str, pd.Series]:
+    """Kolom tabel harga yang dipakai baik tabel ringkas maupun tabel lengkap."""
+    return {
+        "Kompetitor": _column(frame, "nama").fillna("").astype(str),
+        "Kategori": _column(frame, "kategori").fillna("").astype(str),
+        "Paket": _column(frame, "nama_paket").fillna("").astype(str),
+        "Model": _column(frame, "model_harga").fillna("").astype(str),
+        "Harga": _column(frame, "harga_idr").map(_harga),
+        "Periode": _column(frame, "periode").fillna("").astype(str),
+        "Ekuivalen bulanan": _column(frame, "harga_bulanan").map(_bulanan),
+    }
+
+
+def price_table_view(frame: pd.DataFrame) -> pd.DataFrame:
+    """Tabel harga paket dengan nominal dalam penulisan rupiah."""
+    return pd.DataFrame(_price_columns(frame))
+
+
+def render_package_price_table(frame: pd.DataFrame, caption: str | None = None) -> None:
+    """Tabel ringkas harga paket, tampil langsung di halaman analisis harga."""
+    if frame.empty:
+        empty_state("Belum ada paket harga yang cocok dengan filter.")
+        return
+
+    if caption:
+        st.caption(caption)
+    st.dataframe(
+        price_table_view(frame),
+        hide_index=True,
+        width="stretch",
+        alt="Tabel harga paket kompetitor dalam rupiah",
+    )
+
+
 def render_price_table(frame: pd.DataFrame, caption: str | None = None) -> None:
     """Tabel paket harga dengan ekuivalen bulanan dan biaya tambahan."""
     if frame.empty:
@@ -86,13 +120,7 @@ def render_price_table(frame: pd.DataFrame, caption: str | None = None) -> None:
 
     view = pd.DataFrame(
         {
-            "Kompetitor": _column(frame, "nama").fillna("").astype(str),
-            "Kategori": _column(frame, "kategori").fillna("").astype(str),
-            "Paket": _column(frame, "nama_paket").fillna("").astype(str),
-            "Model": _column(frame, "model_harga").fillna("").astype(str),
-            "Harga": _column(frame, "harga_idr").map(_harga),
-            "Periode": _column(frame, "periode").fillna("").astype(str),
-            "Ekuivalen bulanan": _column(frame, "harga_bulanan").map(_bulanan),
+            **_price_columns(frame),
             "Batasan": _column(frame, "batasan").fillna("").astype(str),
             "Biaya tambahan": _column(frame, "biaya_tambahan").fillna("").astype(str),
         }

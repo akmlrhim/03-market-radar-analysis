@@ -102,6 +102,16 @@ def render() -> None:
             "berbeda dari AI agent; pilih kategori tunggal sebelum menarik kesimpulan harga."
         )
 
+    with st.container(border=True):
+        st.subheader("Daftar harga paket")
+        st.caption(
+            "Seluruh harga dalam rupiah. Paket tanpa nominal publik ditandai 'Hubungi sales'; "
+            "ekuivalen bulanan kosong berarti harga tidak bisa disetarakan per bulan."
+        )
+        components.render_package_price_table(
+            prices.sort_values("harga_bulanan", na_position="last")
+        )
+
     kiri, kanan = st.columns(2, gap="medium")
     with kiri, st.container(border=True):
         st.subheader("Harga bulanan per paket")
@@ -164,7 +174,7 @@ def render() -> None:
             st.metric("Persentil", f"{persentil:.0f}", border=True)
             st.metric("Paket pembanding", str(stats["count"]), border=True)
         st.caption(
-            f"Harga Rp{rencana:,.0f} berada di atas atau sama dengan {persentil:.0f}% paket bulanan. "
+            f"Harga {rupiah(rencana)} berada di atas atau sama dengan {persentil:.0f}% paket bulanan. "
             "Persentil dihitung dari harga paket, bukan dari kemauan bayar."
         )
         st.caption(_nearest_text(monthly, float(rencana)))
