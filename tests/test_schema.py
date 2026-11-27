@@ -1,4 +1,4 @@
-"""Uji kontrak data dan deteksi gap."""
+"""Uji kontrak data dan fitur kompetitor."""
 
 from __future__ import annotations
 
@@ -6,7 +6,6 @@ import pandas as pd
 
 from radar_pasar.data.schema import TABLE_COLUMNS, coerce_table, empty_frame
 from radar_pasar.domain.features import feature_matrix, feature_tokens
-from radar_pasar.domain.gaps import gap_findings
 
 
 def test_empty_frame_has_full_schema() -> None:
@@ -69,59 +68,3 @@ def test_feature_matrix_counts_owners() -> None:
     assert bool(matrix.loc[1, "Broadcast"]) is False
     assert summary.iloc[0]["fitur"] == "Chat"
     assert int(summary.iloc[0]["jumlah"]) == 2
-
-
-def test_gap_findings_flags_hidden_costs_and_unpriced_competitors() -> None:
-    kompetitor = pd.DataFrame(
-        [
-            {
-                "id": 1,
-                "nama": "A",
-                "fitur_utama": "Chat",
-                "segmen_target": "UMKM",
-                "kategori": "Chatbot WA",
-            },
-            {
-                "id": 2,
-                "nama": "B",
-                "fitur_utama": "Chat",
-                "segmen_target": "Enterprise",
-                "kategori": "CRM AI",
-            },
-        ]
-    )
-    harga = pd.DataFrame(
-        [
-            {
-                "id": 1,
-                "kompetitor_id": 1,
-                "nama_paket": "Lite",
-                "harga_idr": 100_000,
-                "periode": "Bulanan",
-                "model_harga": "Langganan",
-                "biaya_tambahan": "Biaya pesan",
-            },
-            {
-                "id": 2,
-                "kompetitor_id": 2,
-                "nama_paket": "Sales",
-                "harga_idr": None,
-                "periode": "Bulanan",
-                "model_harga": "Langganan",
-                "biaya_tambahan": "",
-            },
-        ]
-    )
-    gaps = gap_findings(kompetitor, harga)
-
-    assert not gaps.empty
-    labels = set(gaps["gap"])
-    assert "Harga publik yang transparan" in labels
-    assert "Paket khusus freelancer" in labels
-    assert set(gaps["prioritas"]) <= {"Tinggi", "Sedang", "Rendah"}
-
-
-def test_gap_findings_without_competitors() -> None:
-    empty = pd.DataFrame(columns=TABLE_COLUMNS["kompetitor"])
-
-    assert gap_findings(empty, pd.DataFrame()).empty

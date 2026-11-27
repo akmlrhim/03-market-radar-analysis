@@ -41,16 +41,6 @@ TABLE_COLUMNS: dict[str, list[str]] = {
         "sumber_url",
         "tanggal_cek",
     ],
-    "pasar": [
-        "id",
-        "indikator",
-        "nilai",
-        "satuan",
-        "tahun",
-        "sumber",
-        "catatan",
-        "sumber_url",
-    ],
 }
 
 COLUMN_TYPES: dict[str, dict[str, str]] = {
@@ -83,16 +73,6 @@ COLUMN_TYPES: dict[str, dict[str, str]] = {
         "biaya_tambahan": "text",
         "sumber_url": "text",
         "tanggal_cek": "date",
-    },
-    "pasar": {
-        "id": "int",
-        "indikator": "text",
-        "nilai": "float",
-        "satuan": "text",
-        "tahun": "int",
-        "sumber": "text",
-        "catatan": "text",
-        "sumber_url": "text",
     },
 }
 

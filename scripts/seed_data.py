@@ -8,9 +8,8 @@ Sumber kompetitor dan harga diambil langsung dari halaman resmi lewat
 crawl4ai/Playwright. Pemeriksaan ulang seluruh baris dilakukan pada 27 November
 2026: setiap URL dibuka kembali dan angka pada CSV dicocokkan dengan halaman.
 Pada hari yang sama ditambahkan EVA, Jalinara, Moonwa, Replai.id, dan ZONA AI
-dari hasil pencarian dan halaman harga resmi masing-masing. Angka pasar diambil
-dari Kementerian UMKM, BPS, dan survei UKMINDONESIA-ICCI. Setiap baris menyimpan
-URL sumber dan status verifikasi; temuan per baris dicatat di
+dari hasil pencarian dan halaman harga resmi masing-masing. Setiap baris
+menyimpan URL sumber dan status verifikasi; temuan per baris dicatat di
 docs/verifikasi-2026-11-27.md.
 """
 
@@ -1605,130 +1604,6 @@ HARGA = [
     },
 ]
 
-PASAR_COLUMNS = [
-    "id",
-    "indikator",
-    "nilai",
-    "satuan",
-    "tahun",
-    "sumber",
-    "catatan",
-    "sumber_url",
-]
-
-PASAR = [
-    {
-        "id": 1,
-        "indikator": "Jumlah UMKM non-pertanian",
-        "nilai": 30.21,
-        "satuan": "Juta usaha",
-        "tahun": 2025,
-        "sumber": "Kementerian UMKM (SIDT-UMKM)",
-        "catatan": "Data administratif per 31 Des 2025. Seri lama 65,4 juta memakai basis dan metodologi berbeda.",
-        "sumber_url": "https://kadin.id/data-dan-statistik/umkm-indonesia",
-    },
-    {
-        "id": 2,
-        "indikator": "Kontribusi UMKM ke PDB",
-        "nilai": 61.07,
-        "satuan": "Persen",
-        "tahun": 2024,
-        "sumber": "Kementerian UMKM",
-        "catatan": "Angka yang sering dikutip 61,07%; pembulatan ke 61%.",
-        "sumber_url": "https://umkm.go.id",
-    },
-    {
-        "id": 3,
-        "indikator": "Pekerja paruh waktu dan pekerja lepas",
-        "nilai": 36.0,
-        "satuan": "Juta orang",
-        "tahun": 2025,
-        "sumber": "BPS Sakernas Agustus 2025",
-        "catatan": "Gabungan pekerja paruh waktu (kurang dari 35 jam/minggu) dan pekerja lepas; bukan khusus freelancer digital.",
-        "sumber_url": "https://www.bps.go.id/id/publication/2025/12/23/5fe58c9723acafc73fb95bff/laborer-situation-in-indonesia-august-2025.html",
-    },
-    {
-        "id": 4,
-        "indikator": "UMKM di ekosistem digital",
-        "nilai": 27.0,
-        "satuan": "Juta usaha",
-        "tahun": 2023,
-        "sumber": "Kemenko Perekonomian",
-        "catatan": "Posisi Desember 2023. Kemenkop UKM mencatat 25,42 juta dengan basis Buku Serial; angka tidak sebanding langsung dengan 30,21 juta SIDT.",
-        "sumber_url": "https://www.statsindo.com/insight/umkm-digital-transformation",
-    },
-    {
-        "id": 5,
-        "indikator": "Adopsi AI di UMKM",
-        "nilai": 67.65,
-        "satuan": "Persen",
-        "tahun": 2025,
-        "sumber": "Survei UKMINDONESIA x ICCI (n=204)",
-        "catatan": "Laporan 23 September 2025. Sampel kecil dan cenderung melek digital; jangan digeneralisasi ke seluruh UMKM.",
-        "sumber_url": "https://ukmindonesia.id/baca-deskripsi-posts/laporan-survey-penggunaan-artificial-intelligence-ai-oleh-umkm-pemanfaatan-ai-belum-dioptimal-kan-untuk-dongkrak-produktivitas-usaha",
-    },
-    {
-        "id": 6,
-        "indikator": "Budget software UMKM",
-        "nilai": 150000,
-        "satuan": "Rp per bulan",
-        "tahun": 2026,
-        "sumber": "Asumsi riset awal",
-        "catatan": "Belum hasil survei. Harga paket termurah kompetitor Rp99.000-Rp499.000.",
-        "sumber_url": "",
-    },
-    {
-        "id": 7,
-        "indikator": "Budget software freelancer",
-        "nilai": 75000,
-        "satuan": "Rp per bulan",
-        "tahun": 2026,
-        "sumber": "Asumsi riset awal",
-        "catatan": "Belum hasil survei; segmen freelancer perlu divalidasi terpisah.",
-        "sumber_url": "",
-    },
-    {
-        "id": 8,
-        "indikator": "UMKM yang siap bayar AI agent",
-        "nilai": 10.0,
-        "satuan": "Persen",
-        "tahun": 2026,
-        "sumber": "Asumsi model",
-        "catatan": "Dipakai sebagai slider SOM; ganti setelah wawancara.",
-        "sumber_url": "",
-    },
-    {
-        "id": 9,
-        "indikator": "UMKM skala mikro",
-        "nilai": 30.119928,
-        "satuan": "Juta usaha",
-        "tahun": 2025,
-        "sumber": "Kementerian UMKM (SIDT-UMKM)",
-        "catatan": "99,70% dari total UMKM non-pertanian.",
-        "sumber_url": "https://kadin.id/data-dan-statistik/umkm-indonesia",
-    },
-    {
-        "id": 10,
-        "indikator": "UMKM skala kecil",
-        "nilai": 0.073828,
-        "satuan": "Juta usaha",
-        "tahun": 2025,
-        "sumber": "Kementerian UMKM (SIDT-UMKM)",
-        "catatan": "73.828 unit atau 0,24% dari total.",
-        "sumber_url": "https://kadin.id/data-dan-statistik/umkm-indonesia",
-    },
-    {
-        "id": 11,
-        "indikator": "UMKM skala menengah",
-        "nilai": 0.015313,
-        "satuan": "Juta usaha",
-        "tahun": 2025,
-        "sumber": "Kementerian UMKM (SIDT-UMKM)",
-        "catatan": "15.313 unit atau 0,05% dari total.",
-        "sumber_url": "https://kadin.id/data-dan-statistik/umkm-indonesia",
-    },
-]
-
 
 def main() -> None:
     unverified = [
@@ -1744,7 +1619,6 @@ def main() -> None:
     frames = {
         "kompetitor.csv": pd.DataFrame(KOMPETITOR, columns=KOMPETITOR_COLUMNS),
         "harga.csv": pd.DataFrame(HARGA, columns=HARGA_COLUMNS),
-        "pasar.csv": pd.DataFrame(PASAR, columns=PASAR_COLUMNS),
     }
     for filename, frame in frames.items():
         path = DATA / filename

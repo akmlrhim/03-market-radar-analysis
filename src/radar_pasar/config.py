@@ -13,7 +13,6 @@ DATA_DIR = BASE_DIR / "data"
 TABLE_FILES = {
     "kompetitor": "kompetitor.csv",
     "harga": "harga.csv",
-    "pasar": "pasar.csv",
 }
 
 # Data yang lebih lama dari ini dianggap perlu dicek ulang.
