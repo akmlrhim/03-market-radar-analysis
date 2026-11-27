@@ -21,11 +21,26 @@ def _skala_umkm(pasar: pd.DataFrame) -> pd.DataFrame:
     return skala
 
 
+def _nilai(row: pd.Series) -> str:
+    """Tampilkan nilai indikator: rupiah untuk anggaran, desimal Indonesia untuk lainnya."""
+    value = pd.to_numeric(row.get("nilai"), errors="coerce")
+    if pd.isna(value):
+        return "—"
+    satuan = str(row.get("satuan", "") or "")
+    if "Rp" in satuan:
+        return rupiah(float(value))
+    if "Juta usaha" in satuan:
+        return decimal(float(value), 3)
+    if "Persen" in satuan:
+        return decimal(float(value), 2)
+    return number(float(value))
+
+
 def _sumber_table(pasar: pd.DataFrame) -> None:
     view = pd.DataFrame(
         {
             "Indikator": pasar["indikator"].fillna("").astype(str),
-            "Nilai": pasar["nilai"],
+            "Nilai": pasar.apply(_nilai, axis=1),
             "Satuan": pasar["satuan"].fillna("").astype(str),
             "Tahun": pasar["tahun"],
             "Sumber": pasar["sumber"].fillna("").astype(str),
