@@ -1,6 +1,6 @@
 # Radar Pasar
 
-Dashboard riset kompetitor, pasar, dan harga untuk produk digital dan AI agent
+Dashboard riset kompetitor dan harga untuk produk digital dan AI agent
 Impost Teknologi Indonesia. Target segmen: UMKM dan freelancer.
 
 Dibangun dengan Streamlit + pandas + Altair. Data disimpan sebagai CSV di
@@ -42,11 +42,9 @@ ruff check .
 
 | Halaman | Isi |
 | --- | --- |
-| Ringkasan | Metrik utama, tiga temuan, tiga rekomendasi, status data |
+| Ringkasan | Metrik utama, temuan, rekomendasi harga, status data |
 | Peta kompetitor | Filter, detail per kompetitor, matriks fitur |
-| Analisis harga | Bar, scatter, box plot, biaya tersembunyi, simulator harga |
-| Potensi pasar | TAM/SAM/SOM dengan slider, distribusi UMKM, sumber |
-| Gap dan rekomendasi | Celah pasar otomatis, posisi harga vs fitur, rekomendasi paket |
+| Analisis harga | Bar, scatter, box plot, tabel harga, rincian biaya efektif, simulator harga |
 
 ## Data
 
@@ -59,12 +57,6 @@ Sumber utama:
   Technology, Kelas.com, Wablas, majoo, Convia, Weaku, FirstCRM, Core
   Freelancers, Templatku.com, MySkill, Sahut, Spicelab, Mahirusaha, Mobichat,
   EVA, Jalinara, Moonwa, Replai.id, ZONA AI).
-- Kementerian UMKM / SIDT-UMKM melalui publikasi Kadin: 30,21 juta UMKM
-  non-pertanian per 31 Desember 2025.
-- BPS Sakernas Agustus 2025: 36 juta pekerja paruh waktu dan pekerja lepas
-  (bukan khusus freelancer digital).
-- Survei UKMINDONESIA x ICCI 2025: 67,65% dari 204 responden UMKM memakai AI
-  (sampel kecil, cenderung melek digital).
 
 Setiap baris kompetitor dan harga menyimpan `sumber_url` dan `tanggal_cek`.
 
@@ -104,17 +96,8 @@ Setiap baris kompetitor dan harga menyimpan `sumber_url` dan `tanggal_cek`.
   tidak ada di halaman dihapus; "70 integrasi" Wablas dikoreksi menjadi 70
   fitur; angka "1.400+ materi" MySkill dihapus karena tidak tercantum di
   halaman. Paket Cekat.ai Custom ditambahkan.
-- **Angka pasar.** 36 juta adalah gabungan pekerja paruh waktu dan pekerja
-  lepas (Sakernas Agustus 2025), bukan khusus freelancer digital. Adopsi AI
-  67,65% berasal dari laporan UKMINDONESIA 23 September 2025 (n=204).
-- **Angka UMKM memiliki dua seri.** SIDT-UMKM 2025 (30,21 juta, non-pertanian)
-  berbeda dari seri lama 65,4 juta yang masih umum dikutip. Jangan campur.
 - **Rekomendasi harga** dihitung dari persentil harga kompetitor, bukan survei
   kemauan bayar. Validasi sebelum dipublikasikan.
-
-### Kolom tambahan di luar PRD
-
-- `pasar.sumber_url` untuk melacak URL sumber.
 
 ### Memperbarui data
 
@@ -144,8 +127,7 @@ terverifikasi.
 ├── requirements.txt              # -e .
 ├── data/
 │   ├── kompetitor.csv
-│   ├── harga.csv
-│   └── pasar.csv
+│   └── harga.csv
 ├── docs/
 │   └── verifikasi-2026-11-27.md  # bukti pemeriksaan per baris
 ├── src/radar_pasar/
@@ -156,22 +138,18 @@ terverifikasi.
 │   ├── domain/                   # murni Python, tanpa Streamlit
 │   │   ├── formatting.py
 │   │   ├── pricing.py
-│   │   ├── features.py
-│   │   ├── market.py
-│   │   └── gaps.py
+│   │   └── features.py
 │   └── presentation/
 │       ├── charts.py             # chart Altair
 │       ├── components.py         # komponen UI bersama
 │       └── pages/                # fungsi render() per halaman
 │           ├── ringkasan.py
 │           ├── peta_kompetitor.py
-│           ├── analisis_harga.py
-│           ├── potensi_pasar.py
-│           └── gap_rekomendasi.py
+│           └── analisis_harga.py
 ├── scripts/seed_data.py
 ├── tests/
 │   ├── test_pricing.py
-│   ├── test_market.py
+│   ├── test_components.py
 │   ├── test_schema.py
 │   └── test_data.py
 ├── .streamlit/config.toml        # tema

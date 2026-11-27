@@ -50,7 +50,7 @@ pages = st.navigation(
                 analisis_harga.render,
                 title="Analisis harga",
                 icon=":material/sell:",
-                help="Bandingkan harga paket, biaya tersembunyi, dan simulasikan harga Impost.",
+                help="Bandingkan harga paket, rincian biaya efektif, dan simulasikan harga Impost.",
                 url_path="analisis-harga",
             ),
         ],
@@ -75,9 +75,7 @@ with st.sidebar:
         st.caption(f":orange[{quality['unverified_count']} belum terverifikasi]")
     if quality["stale_count"]:
         st.caption(f":red[{quality['stale_count']} baris > 30 hari]")
-    st.caption(
-        "Sumber: situs resmi kompetitor, Kementerian UMKM, BPS, dan survei publik."
-    )
+    st.caption("Sumber: halaman harga dan produk resmi kompetitor.")
 
 st.title(pages.title, icon=pages.icon)
 pages.run()
