@@ -136,27 +136,15 @@ def render() -> None:
             components.empty_state("Data harga belum cukup untuk box plot.")
 
     with st.container(border=True):
-        st.subheader("Biaya tersembunyi")
-        biaya = prices[prices["biaya_tambahan"].fillna("").astype(str).str.strip().ne("")]
-        if biaya.empty:
-            st.caption("Tidak ada biaya tambahan yang tercatat untuk filter ini.")
-        else:
-            st.caption(
-                "Biaya pesan WhatsApp, kuota AI, dan implementasi tidak masuk harga paket. "
-                "Hitung ulang sebelum membandingkan harga efektif."
-            )
-            st.dataframe(
-                pd.DataFrame(
-                    {
-                        "Kompetitor": biaya["nama"].fillna("").astype(str),
-                        "Paket": biaya["nama_paket"].fillna("").astype(str),
-                        "Biaya tambahan": biaya["biaya_tambahan"].fillna("").astype(str),
-                    }
-                ),
-                hide_index=True,
-                width="stretch",
-                alt="Daftar paket dengan biaya tambahan di luar langganan",
-            )
+        st.subheader("Rincian biaya efektif")
+        components.render_effective_cost_table(
+            prices.sort_values("harga_bulanan", na_position="last"),
+            caption=(
+                "Estimasi total bulanan memakai harga langganan sebagai batas bawah. "
+                "Biaya pesan, kuota, agen tambahan, PPN, dan implementasi baru bisa "
+                "dinilai setelah jumlah pemakaian ditentukan."
+            ),
+        )
 
     with st.container(border=True):
         st.subheader("Simulator harga Impost")

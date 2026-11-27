@@ -135,6 +135,88 @@ def render_price_table(frame: pd.DataFrame, caption: str | None = None) -> None:
     )
 
 
+def _biaya_tags(text: str) -> str:
+    """Kelompokkan biaya di luar paket dari catatan berbasis teks."""
+    value = text.lower()
+    tags: list[str] = []
+    if "ppn" in value or "pajak" in value:
+        tags.append("PPN")
+    if any(
+        kata in value
+        for kata in (
+            "pesan",
+            "percakapan",
+            "waba",
+            "broadcast",
+            "kuota",
+            "kredit",
+            "coins",
+            "top-up",
+            "top up",
+            "add-on",
+            "iklan",
+        )
+    ):
+        tags.append("Pesan/kuota")
+    if any(
+        kata in value
+        for kata in ("agen", "pengguna", "user", "nomor", "karyawan", "function")
+    ):
+        tags.append("Agen/add-on")
+    if any(
+        kata in value
+        for kata in ("implementasi", "integrasi", "setup", "perangkat", "maintenance", "development")
+    ):
+        tags.append("Implementasi")
+    if "promo" in value or "diskon" in value:
+        tags.append("Promo/diskon")
+    if "via sales" in value or "tidak dipublikasikan" in value:
+        tags.append("Harga via sales")
+    return ", ".join(tags) if tags else "Lainnya"
+
+
+def effective_cost_view(frame: pd.DataFrame) -> pd.DataFrame:
+    """Rincian biaya efektif: harga paket, komponen di luar paket, dan batas bawahnya."""
+    catatan = _column(frame, "biaya_tambahan").fillna("").astype(str).str.strip()
+    selected = frame[catatan.ne("")]
+    catatan = catatan.loc[selected.index]
+    tags = catatan.map(_biaya_tags)
+    bulanan = pd.to_numeric(_column(selected, "harga_bulanan"), errors="coerce")
+    estimasi = [
+        f"{rupiah(float(value))} + {label}" if pd.notna(value) else "—"
+        for value, label in zip(bulanan, tags, strict=False)
+    ]
+    return pd.DataFrame(
+        {
+            "Kompetitor": _column(selected, "nama").fillna("").astype(str),
+            "Paket": _column(selected, "nama_paket").fillna("").astype(str),
+            "Harga paket": _column(selected, "harga_idr").map(_harga),
+            "Ekuivalen bulanan": _column(selected, "harga_bulanan").map(_bulanan),
+            "Estimasi total bulanan": estimasi,
+            "Periode": _column(selected, "periode").fillna("").astype(str),
+            "Komponen di luar paket": tags,
+            "Rincian": catatan,
+        }
+    )
+
+
+def render_effective_cost_table(frame: pd.DataFrame, caption: str | None = None) -> None:
+    """Tabel rincian biaya efektif paket kompetitor."""
+    view = effective_cost_view(frame)
+    if view.empty:
+        st.caption("Tidak ada biaya tambahan yang tercatat untuk filter ini.")
+        return
+
+    if caption:
+        st.caption(caption)
+    st.dataframe(
+        view,
+        hide_index=True,
+        width="stretch",
+        alt="Rincian biaya efektif paket kompetitor di luar harga langganan",
+    )
+
+
 def _yes_no(value: Any) -> str:
     if value is None or pd.isna(value):
         return "Belum dicatat"
