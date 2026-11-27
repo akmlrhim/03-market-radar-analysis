@@ -6,9 +6,7 @@ import pandas as pd
 import streamlit as st
 
 from radar_pasar.data import repository
-from radar_pasar.domain.formatting import decimal, number, rupiah, rupiah_compact
-from radar_pasar.domain.gaps import gap_findings
-from radar_pasar.domain.market import market_value
+from radar_pasar.domain.formatting import decimal, number, rupiah
 from radar_pasar.domain.pricing import (
     monthly_prices,
     price_stats,
@@ -16,12 +14,6 @@ from radar_pasar.domain.pricing import (
     recommended_tiers,
 )
 from radar_pasar.presentation import charts, components
-
-
-def _tam(pasar: pd.DataFrame) -> float:
-    umkm = market_value(pasar, "Jumlah UMKM") or 0.0
-    budget = market_value(pasar, "Budget software UMKM") or 0.0
-    return umkm * 1_000_000 * budget * 12
 
 
 def _findings(kompetitor: pd.DataFrame, harga: pd.DataFrame, monthly: pd.DataFrame) -> list[str]:
@@ -55,10 +47,7 @@ def _findings(kompetitor: pd.DataFrame, harga: pd.DataFrame, monthly: pd.DataFra
 
 
 def _recommendations(kompetitor: pd.DataFrame, harga: pd.DataFrame) -> list[str]:
-    recommendations = [
-        f"**{row['gap']}** — {row['temuan']}"
-        for _, row in gap_findings(kompetitor, harga).head(3).iterrows()
-    ]
+    recommendations: list[str] = []
 
     tiers = recommended_tiers(kompetitor, harga)
     if tiers:
@@ -106,11 +95,10 @@ def render() -> None:
     data = repository.load_all()
     kompetitor = data["kompetitor"]
     harga = data["harga"]
-    pasar = data["pasar"]
 
     components.quality_notice()
     components.intro(
-        "Riset kompetitor, harga, dan ukuran pasar untuk produk digital dan AI agent "
+        "Riset kompetitor dan harga untuk produk digital dan AI agent "
         "Impost Teknologi Indonesia. Fokus segmen UMKM dan freelancer."
     )
 
@@ -121,22 +109,12 @@ def render() -> None:
     monthly = monthly_prices(kompetitor, harga)
     stats = price_stats(kompetitor, harga)
     dengan_harga = int(monthly["kompetitor_id"].nunique()) if not monthly.empty else 0
-    tam = _tam(pasar)
 
     with st.container(horizontal=True):
         st.metric("Kompetitor", number(len(kompetitor)), border=True)
         st.metric("Harga termurah", rupiah(stats["cheapest"]), border=True, help="Paket bulanan terendah.")
         st.metric("Harga median", rupiah(stats["median"]), border=True, help="Median paket bulanan.")
         st.metric("Harga tertinggi", rupiah(stats["expensive"]), border=True, help="Paket bulanan tertinggi.")
-        st.metric(
-            "Estimasi TAM",
-            rupiah_compact(tam),
-            border=True,
-            help=(
-                "TAM (Total Addressable Market): jumlah UMKM × budget software bulanan × 12. "
-                "Bukan proyeksi pendapatan."
-            ),
-        )
 
     kolom_temuan, kolom_rekomendasi = st.columns(2, gap="medium")
     with kolom_temuan, st.container(border=True):

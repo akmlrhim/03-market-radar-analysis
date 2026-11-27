@@ -2,13 +2,9 @@
 
 from __future__ import annotations
 
-from typing import Any
-
 import altair as alt
 import numpy as np
 import pandas as pd
-
-from radar_pasar.domain.market import MarketModel, stage_rows
 
 LOG_PRICE = alt.Scale(type="log", base=10)
 
@@ -171,71 +167,6 @@ def price_position(monthly: pd.DataFrame, value: float) -> alt.Chart | None:
     return (points + rule + label).properties(height=280)
 
 
-def market_stage_bar(model: MarketModel) -> alt.Chart | None:
-    """Corong pasar dengan sumbu log agar tahap kecil tetap terbaca."""
-    stages = stage_rows(model)
-    if not stages:
-        return None
-
-    frame = pd.DataFrame(stages, columns=["tahap", "jumlah"])
-    frame["mulai"] = 1.0
-    base = alt.Chart(frame).encode(
-        y=alt.Y("tahap:N", sort=None, title=None),
-        x=alt.X("mulai:Q", scale=LOG_PRICE, title="Jumlah pengguna (skala log)"),
-        x2="jumlah:Q",
-    )
-    bars = base.mark_bar(cornerRadiusEnd=4, color="#4c78a8").encode(
-        tooltip=[
-            alt.Tooltip("tahap:N", title="Tahap"),
-            alt.Tooltip("jumlah:Q", title="Jumlah", format=",.0f"),
-        ]
-    )
-    labels = (
-        alt.Chart(frame)
-        .mark_text(align="left", dx=6, fontSize=11)
-        .encode(
-            y=alt.Y("tahap:N", sort=None),
-            x=alt.X("jumlah:Q", scale=LOG_PRICE),
-            text=alt.Text("jumlah:Q", format=",.0f"),
-        )
-    )
-    return (bars + labels).properties(height=280)
-
-
-def indicator_bar(frame: pd.DataFrame) -> alt.Chart | None:
-    """Batang indikator pasar yang sudah disaring oleh halaman."""
-    if frame.empty or not {"indikator", "nilai"}.issubset(frame.columns):
-        return None
-
-    data = frame.copy()
-    data["nilai"] = pd.to_numeric(data["nilai"], errors="coerce")
-    data = data[data["nilai"].notna()]
-    if data.empty:
-        return None
-
-    tooltip: list[Any] = [
-        alt.Tooltip("indikator:N", title="Indikator"),
-        alt.Tooltip("nilai:Q", title="Nilai", format=",.2f"),
-    ]
-    color: dict[str, Any] = {}
-    if "satuan" in data.columns:
-        data["satuan"] = data["satuan"].fillna("").astype(str)
-        color["color"] = alt.Color("satuan:N", title="Satuan")
-        tooltip.append(alt.Tooltip("satuan:N", title="Satuan"))
-
-    return (
-        alt.Chart(data)
-        .mark_bar(cornerRadiusEnd=4)
-        .encode(
-            y=alt.Y("indikator:N", sort="-x", title=None),
-            x=alt.X("nilai:Q", title="Nilai"),
-            tooltip=tooltip,
-            **color,
-        )
-        .properties(height=max(220, 28 * len(data)))
-    )
-
-
 def ranking_bar(frame: pd.DataFrame, label: str = "masalah", value: str = "jumlah") -> alt.Chart | None:
     """Peringkat horizontal untuk tema masalah, hambatan, atau kategori."""
     if frame.empty or label not in frame.columns or value not in frame.columns:
@@ -328,31 +259,3 @@ def feature_coverage(summary: pd.DataFrame, total: int | None = None) -> alt.Cha
     )
 
 
-def price_band_chart(tiers: list[dict[str, object]] | pd.DataFrame) -> alt.Chart | None:
-    """Rentang harga rekomendasi per paket Impost."""
-    frame = tiers.copy() if isinstance(tiers, pd.DataFrame) else pd.DataFrame(tiers)
-    if frame.empty or not {"paket", "harga"}.issubset(frame.columns):
-        return None
-
-    frame["harga"] = pd.to_numeric(frame["harga"], errors="coerce")
-    frame = frame[frame["harga"].notna()]
-    if frame.empty:
-        return None
-
-    color: dict[str, Any] = {}
-    tooltip: list[Any] = [
-        alt.Tooltip("paket:N", title="Paket"),
-        alt.Tooltip("harga:Q", title="Harga/bulan", format=",.0f"),
-    ]
-    if "posisi" in frame.columns:
-        frame["posisi"] = frame["posisi"].fillna("").astype(str)
-        color["color"] = alt.Color("posisi:N", title="Posisi pasar")
-        tooltip.append(alt.Tooltip("posisi:N", title="Posisi"))
-
-    base = alt.Chart(frame).encode(
-        y=alt.Y("paket:N", sort=None, title=None),
-        x=alt.X("harga:Q", scale=alt.Scale(zero=False), title="Harga bulanan (Rp)"),
-    )
-    bars = base.mark_bar(cornerRadiusEnd=6, size=26).encode(tooltip=tooltip, **color)
-    labels = base.mark_text(align="left", dx=6, fontSize=11).encode(text=alt.Text("harga:Q", format=",.0f"))
-    return (bars + labels).properties(height=200)

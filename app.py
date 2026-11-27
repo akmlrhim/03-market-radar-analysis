@@ -16,9 +16,7 @@ from radar_pasar.config import APP_ICON, APP_TITLE
 from radar_pasar.data import repository
 from radar_pasar.presentation.pages import (
     analisis_harga,
-    gap_rekomendasi,
     peta_kompetitor,
-    potensi_pasar,
     ringkasan,
 )
 
@@ -54,20 +52,6 @@ pages = st.navigation(
                 icon=":material/sell:",
                 help="Bandingkan harga paket, biaya tersembunyi, dan simulasikan harga Impost.",
                 url_path="analisis-harga",
-            ),
-            st.Page(
-                potensi_pasar.render,
-                title="Potensi pasar",
-                icon=":material/public:",
-                help="Hitung TAM, SAM, dan SOM dengan asumsi yang bisa diubah.",
-                url_path="potensi-pasar",
-            ),
-            st.Page(
-                gap_rekomendasi.render,
-                title="Gap dan rekomendasi",
-                icon=":material/lightbulb:",
-                help="Celah pasar, posisi harga versus fitur, dan rekomendasi paket Impost.",
-                url_path="gap-rekomendasi",
             ),
         ],
     },
