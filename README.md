@@ -50,16 +50,19 @@ ruff check .
 
 ## Data
 
-Data awal diisi dari riset 25-26 November 2026: **22 kompetitor** dan **68 baris
-harga**. Sumber utama:
+Data awal diisi dari riset 25-26 November 2026, diperiksa ulang seluruhnya dan
+ditambah pada 27 November 2026: **27 kompetitor** dan **88 baris harga**.
+Sumber utama:
 
 - Halaman harga dan produk resmi kompetitor (Cekat.ai, Mekari Qontak, Qiscus,
   Botika, Canggih.AI, Dripsender, Kata.ai, Meeting.ai/Bahasa.ai, Sagara
   Technology, Kelas.com, Wablas, majoo, Convia, Weaku, FirstCRM, Core
-  Freelancers, Templatku.com, MySkill, Sahut, Spicelab, Mahirusaha, Mobichat).
+  Freelancers, Templatku.com, MySkill, Sahut, Spicelab, Mahirusaha, Mobichat,
+  EVA, Jalinara, Moonwa, Replai.id, ZONA AI).
 - Kementerian UMKM / SIDT-UMKM melalui publikasi Kadin: 30,21 juta UMKM
   non-pertanian per 31 Desember 2025.
-- BPS Sakernas Agustus 2025: 36 juta pekerja bebas/freelancer.
+- BPS Sakernas Agustus 2025: 36 juta pekerja paruh waktu dan pekerja lepas
+  (bukan khusus freelancer digital).
 - Survei UKMINDONESIA x ICCI 2025: 67,65% dari 204 responden UMKM memakai AI
   (sampel kecil, cenderung melek digital).
 
@@ -79,19 +82,31 @@ Setiap baris kompetitor dan harga menyimpan `sumber_url` dan `tanggal_cek`.
 ### Catatan penting
 
 - **Harga berubah cepat.** Cek ulang halaman resmi sebelum memakai angka.
-- **16 dari 22 kompetitor** memiliki harga bulanan numerik; sisanya memilih
-  jalur sales. Median paket bulanan Rp369.500. Paket bulanan termurah Rp22.000
-  (Wablas Nano); ekuivalen bulanan terendah Rp14.917 berasal dari paket tahunan
-  promo MySkill. Paket tertinggi Rp15.000.000 (Spicelab Enterprise, harga
-  mulai dari).
+- **21 dari 27 kompetitor** memiliki harga bulanan numerik; sisanya memilih
+  jalur sales. Median ekuivalen bulanan Rp349.000. Ekuivalen bulanan terendah
+  Rp14.917 berasal dari paket tahunan promo MySkill; paket bulanan berbayar
+  termurah Rp22.000 (Wablas Nano). Paket tertinggi Rp15.000.000 (Spicelab
+  Enterprise, harga mulai dari). Jalinara Free dan Replai Trial berharga Rp0
+  tetapi tidak ikut statistik.
 - **Kategori tidak selalu sebanding.** Wablas (WhatsApp Gateway), majoo
   (POS UMKM), Templatku.com (produk digital sekali beli), dan MySkill
   (e-learning) dijual dengan model berbeda dari langganan AI agent. Gunakan
   filter kategori di halaman Analisis harga sebelum membandingkan.
-- **Verifikasi 26 November 2026.** Competitor baru diambil hanya dari halaman
-  harga resmi masing-masing: Convia, Weaku, FirstCRM, Core Freelancers,
-  Templatku.com, MySkill, Sahut, Spicelab, Mahirusaha, dan Mobichat. Tidak ada
-  angka dari artikel pihak ketiga.
+- **Verifikasi 27 November 2026.** Seluruh 22 halaman kompetitor dibuka ulang
+  lewat crawl4ai MCP dan setiap nominal dicocokkan dengan kartu paket di
+  halaman resmi. Lima kompetitor baru (EVA, Jalinara, Moonwa, Replai.id,
+  ZONA AI) dicari dan diverifikasi pada gelombang kedua; harga yang dirender
+  JavaScript dibaca lewat Playwright MCP. Rincian bukti per baris ada di
+  `docs/verifikasi-2026-11-27.md`. Koreksi yang dilakukan: pendirian Qiscus
+  (2013, bukan 2016) dan Sagara Technology (2014, bukan 2018); Sagara
+  direposisi sebagai software house karena situsnya tidak menjual produk AI
+  agent; klaim "Meta Business Partner" Cekat.ai dan angka traksi Convia yang
+  tidak ada di halaman dihapus; "70 integrasi" Wablas dikoreksi menjadi 70
+  fitur; angka "1.400+ materi" MySkill dihapus karena tidak tercantum di
+  halaman. Paket Cekat.ai Custom ditambahkan.
+- **Angka pasar.** 36 juta adalah gabungan pekerja paruh waktu dan pekerja
+  lepas (Sakernas Agustus 2025), bukan khusus freelancer digital. Adopsi AI
+  67,65% berasal dari laporan UKMINDONESIA 23 September 2025 (n=204).
 - **Angka UMKM memiliki dua seri.** SIDT-UMKM 2025 (30,21 juta, non-pertanian)
   berbeda dari seri lama 65,4 juta yang masih umum dikutip. Jangan campur.
 - **Rekomendasi harga** dihitung dari persentil harga kompetitor, bukan survei
@@ -131,6 +146,8 @@ terverifikasi.
 │   ├── kompetitor.csv
 │   ├── harga.csv
 │   └── pasar.csv
+├── docs/
+│   └── verifikasi-2026-11-27.md  # bukti pemeriksaan per baris
 ├── src/radar_pasar/
 │   ├── config.py                 # path data, judul, ambang data kedaluwarsa
 │   ├── data/

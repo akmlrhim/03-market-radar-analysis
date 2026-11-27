@@ -1,69 +1,89 @@
 id,kompetitor_id,nama_paket,model_harga,harga_idr,periode,batasan,biaya_tambahan,sumber_url,tanggal_cek
-1,1,Chat Pro,Langganan,,Bulanan,"1 WABA, 3.000 MAU, 15.000 AI credits, 5 seats",Harga via sales; biaya pesan Meta terpisah; belum termasuk PPN,https://cekat.ai/pricing,2026-11-25
-2,1,Chat Business,Langganan,,Bulanan,"3 WABA, 10.000 MAU, 50.000 AI credits, 7 seats",Harga via sales; biaya pesan Meta terpisah,https://cekat.ai/pricing,2026-11-25
-3,1,Chat Enterprise,Langganan,,Bulanan,"5 WABA, 30.000 MAU, 150.000 AI credits, 10 seats",Harga via sales; biaya pesan Meta terpisah,https://cekat.ai/pricing,2026-11-25
-4,2,Broadcast,Langganan,750000.0,Bulanan,"WhatsApp API resmi, chatbot FAQ, broadcast, campaign",Biaya per pesan Meta; add-on kuota AI,https://qontak.com/harga/,2026-11-25
-5,2,Service Suite,Langganan,2000000.0,Bulanan,"Tier Plus: 100 AI dialog/bulan, 1 AI agent aktif",Biaya per pesan Meta; tier Ultimate lebih mahal,https://qontak.com/harga/,2026-11-25
-6,2,Sales Suite,Langganan,2000000.0,Bulanan,"Tier Plus: pipeline, task management, CRM report",Biaya per pesan Meta; tier Ultimate lebih mahal,https://qontak.com/harga/,2026-11-25
-7,2,Qontak 360,Langganan,,Bulanan,"Seluruh kemampuan platform, harga via sales",Biaya per pesan Meta,https://qontak.com/harga/,2026-11-25
-8,3,Qiscus Custom,Per pengguna,,Bulanan,Dihitung per agent dan jumlah pelanggan aktif per bulan,Biaya pesan WhatsApp per pesan; add-on channel,https://qiscus.com/pricing,2026-11-25
-9,4,Lite,Langganan,299000.0,Bulanan,"Gratis 1.000 percakapan/bulan, omnichannel, insight, broadcast report",Biaya percakapan tambahan dan biaya pesan Meta,https://waofficial.botika.online/pricing,2026-11-25
-10,4,Pro,Langganan,,Bulanan,"Kustomisasi lanjutan, keamanan, support 24 jam",Harga via sales,https://waofficial.botika.online/pricing,2026-11-25
-11,5,Lite,Langganan,499000.0,Bulanan,Khusus WhatsApp; promo 50 toko pertama (normal Rp900.000),Belum termasuk PPN; biaya pesan WhatsApp,https://canggih.ai/harga,2026-11-25
-12,5,Starter,Langganan,1500000.0,Bulanan,AI di WhatsApp dan DM Instagram,Belum termasuk PPN; biaya pesan WhatsApp; setup mandiri gratis,https://canggih.ai/harga,2026-11-25
-13,5,Business,Langganan,2500000.0,Bulanan,Kapasitas chat dan otomasi lebih besar,Belum termasuk PPN; biaya pesan WhatsApp,https://canggih.ai/harga,2026-11-25
-14,5,Growth,Langganan,3000000.0,Bulanan,Kapasitas tertinggi; integrasi express gratis saat ini,Belum termasuk PPN; biaya pesan WhatsApp,https://canggih.ai/harga,2026-11-25
-15,6,Paket 1 WhatsApp,Langganan,99000.0,Bulanan,"1 akun WA, unlimited admin, kontak, pesan, chatbot",Biaya pesan WhatsApp; harga tahunan berbeda,https://dripsender.id/pricing,2026-11-25
-16,6,Paket 3 WhatsApp,Langganan,129000.0,Bulanan,"3 akun WA, unlimited admin, pesan, chatbot",Biaya pesan WhatsApp; harga tahunan berbeda,https://dripsender.id/pricing,2026-11-25
-17,6,Paket 5 WhatsApp,Langganan,149000.0,Bulanan,"5 akun WA, unlimited admin, pesan, chatbot",Biaya pesan WhatsApp; harga tahunan berbeda,https://dripsender.id/pricing,2026-11-25
-18,6,Managed Service AI 1 WA,Langganan,399000.0,Bulanan,"Tim Dripsender mengelola setup, strategi, dan eksekusi AI",Minimum kontrak 5 bulan; biaya pesan WhatsApp,https://dripsender.id/pricing,2026-11-25
-19,6,Managed Service AI 5 WA,Langganan,999000.0,Bulanan,5 akun WA dengan tim Dripsender,Minimum kontrak 5 bulan; biaya pesan WhatsApp,https://dripsender.id/pricing,2026-11-25
-21,8,Kata.ai Enterprise,Langganan,,Bulanan,"Harga sesuai kebutuhan, umumnya kontrak enterprise",Implementasi dan integrasi terpisah,https://kata.ai,2026-11-25
-22,9,Intern,Langganan,270000.0,Bulanan,1.500 coins/bulan; sekitar 8 jam meeting online,Coins tambahan jika melebihi kuota,https://meeting.ai/id,2026-11-25
-23,9,Manager,Langganan,540000.0,Bulanan,3.000 coins/bulan; sekitar 16 jam meeting online,Coins tambahan jika melebihi kuota,https://meeting.ai/id,2026-11-25
-24,9,Director,Langganan,900000.0,Bulanan,5.000 coins/bulan; rekaman tatap muka tanpa batas,Coins tambahan jika melebihi kuota,https://meeting.ai/id,2026-11-25
-25,10,Proyek chatbot custom,Proyek,,Sekali,Lingkup disesuaikan; angka Rp25 juta di PRD belum terverifikasi,Maintenance dan biaya API terpisah,https://sagaratechnology.com,2026-11-25
-26,11,Kelas premium,Sekali bayar,250000.0,Sekali,Akses satu kelas; katalog menyebut Rp250.000/kelas,Fee kreator tidak dipublikasikan,https://kelas.com,2026-11-25
-27,12,Nano,Langganan,22000.0,Bulanan,1.000 pesan/bulan; riwayat pesan 2 hari,,https://wablas.com/pricing,2026-11-25
-28,12,Lite,Langganan,36000.0,Bulanan,5.000 pesan/bulan; riwayat 3 hari; kontrak 12 bulan Rp240.000,,https://wablas.com/pricing,2026-11-25
-29,12,Small,Langganan,69000.0,Bulanan,10.000 pesan/bulan; riwayat 4 hari; kontrak 12 bulan Rp456.000,,https://wablas.com/pricing,2026-11-25
-30,12,Medium,Langganan,86000.0,Bulanan,Pesan tak terbatas; riwayat 5 hari; kontrak 12 bulan Rp564.000,,https://wablas.com/pricing,2026-11-25
-31,12,Large,Langganan,119000.0,Bulanan,Pesan tak terbatas; riwayat 5 hari; kontrak 12 bulan Rp780.000,,https://wablas.com/pricing,2026-11-25
-32,12,Enterprise,Langganan,139000.0,Bulanan,Pesan tak terbatas; riwayat 5 hari; kontrak 12 bulan Rp912.000,,https://wablas.com/pricing,2026-11-25
-33,13,Starter,Langganan,249000.0,Bulanan,"Single outlet, maks 2 terminal; kasir, inventori, laporan, QRIS",Belum termasuk PPN; perangkat dan jumlah karyawan dihitung terpisah,https://majoo.id/harga,2026-11-25
-34,13,Advance,Langganan,499000.0,Bulanan,"Multi outlet, maks 3 terminal; akuntansi lengkap, CRM, order online",Belum termasuk PPN; perangkat dihitung terpisah,https://majoo.id/harga,2026-11-25
-35,13,Prime,Langganan,999000.0,Bulanan,"Multi outlet, maks 5 terminal; payroll, marketplace, fitur otomasi",Belum termasuk PPN; perangkat dihitung terpisah,https://majoo.id/harga,2026-11-25
-36,13,Prime +,Langganan,,Bulanan,"Konsultasi harga; gudang, workflow, kustomisasi layout",Harga via sales; belum termasuk PPN,https://majoo.id/harga,2026-11-25
-37,14,Starter,Langganan,49000.0,Bulanan,50.000 pesan/bulan; 2.000 penerima broadcast; 3 anggota tim; 500 kredit AI; 1 nomor WA; 1 AI Agent,"Biaya pesan broadcast Meta terpisah; diskon 15% untuk 6 bulan, gratis 2 bulan untuk tahunan",https://convia.id/#pricing,2026-11-26
-38,14,Pro,Langganan,149000.0,Bulanan,200.000 pesan/bulan; 20.000 penerima broadcast; 5 anggota tim; 1.000 kredit AI; 3 AI Agent,Biaya pesan broadcast Meta terpisah; retensi pesan 90 hari,https://convia.id/#pricing,2026-11-26
-39,14,Business,Langganan,299000.0,Bulanan,1.000.000 pesan/bulan; 100.000 penerima broadcast; 10 anggota tim; 3.000 kredit AI; 5 AI Agent,Biaya pesan broadcast Meta terpisah; retensi pesan tanpa batas,https://convia.id/#pricing,2026-11-26
-40,15,UMKM,Langganan,35000.0,Bulanan,4 nomor WA; 3 user; 5.000 pesan/bulan; 1.000 kontak; 3 chatbot otomatis,Biaya iklan Smart Digital Advertising terpisah; tersedia siklus 1-12 bulan,https://weaku.app/harga,2026-11-26
-41,15,Pro,Langganan,60000.0,Bulanan,6 nomor WA; 4 user; 10.000 pesan/bulan; 2.000 kontak; 6 chatbot otomatis,Biaya iklan Smart Digital Advertising terpisah; tersedia siklus 1-12 bulan,https://weaku.app/harga,2026-11-26
-42,15,Max,Langganan,99000.0,Bulanan,12 nomor WA; 6 user; pesan tanpa batas; kontak tanpa batas; chatbot tanpa batas; Official WABA,Top-up saldo pesan fleksibel; biaya iklan Smart Digital Advertising terpisah,https://weaku.app/harga,2026-11-26
-43,16,Lite,Langganan,149000.0,Bulanan,2 user; 10.000 kontak; tanpa fitur AI,"Biaya percakapan Meta terpisah; add-on user Rp59.000, nomor Rp49.000, kontak Rp29.000",https://www.firstcrm.id/#harga,2026-11-26
-44,16,Starter,Langganan,349000.0,Bulanan,3 user; 25.000 kontak; 1.500 kredit AI/bulan,Biaya percakapan Meta terpisah; top-up 1.000 kredit Rp129.000,https://www.firstcrm.id/#harga,2026-11-26
-45,16,Growth,Langganan,699000.0,Bulanan,7 user; 75.000 kontak; 3.500 kredit AI/bulan,Biaya percakapan Meta terpisah; modul AI tambahan Rp99.000-Rp849.000,https://www.firstcrm.id/#harga,2026-11-26
-46,16,Scale,Langganan,1299000.0,Bulanan,15 user; 150.000 kontak; 7.000 kredit AI/bulan,Biaya percakapan Meta terpisah; modul AI tambahan Rp99.000-Rp849.000,https://www.firstcrm.id/#harga,2026-11-26
-47,17,Growth,Langganan,640000.0,Bulanan,10.000 kredit AI; sekitar 2.000 jawaban; 3 user; 1 AI agent; 15.000 broadcast,Ditagih tahunan; pengguna tambahan tidak tersedia,https://corefreelancers.id/ai-agent-whatsapp/#harga,2026-11-26
-48,17,Pro,Langganan,1400000.0,Bulanan,30.000 kredit AI; sekitar 6.000 jawaban; 5 user; 2 AI agent; broadcast tanpa batas,Ditagih tahunan; pengguna tambahan Rp360.000/bulan,https://corefreelancers.id/ai-agent-whatsapp/#harga,2026-11-26
-49,17,Business,Langganan,3700000.0,Bulanan,80.000 kredit AI; sekitar 16.000 jawaban; 5 user; AI agent tanpa batas,Ditagih tahunan; pengguna tambahan Rp1.020.000/bulan,https://corefreelancers.id/ai-agent-whatsapp/#harga,2026-11-26
-50,18,Pitch Deck Startup Indonesia - Bilingual,Sekali bayar,195000.0,Sekali,Template pitch deck; harga normal Rp595.000,Tanpa refund; harga promo,https://www.templatku.com/produk/pitch-deck-startup-indonesia-bilingual,2026-11-26
-51,18,Paket Branding Kit UMKM Lengkap,Sekali bayar,245000.0,Sekali,Paket branding UMKM; harga normal Rp695.000,Tanpa refund; harga promo,https://www.templatku.com/produk/paket-branding-kit-umkm-lengkap,2026-11-26
-52,18,3 Template Google Sheets Premium,Sekali bayar,99000.0,Sekali,Tiga template Google Sheets; harga normal Rp300.000,Tanpa refund; harga promo,https://www.templatku.com/produk/3-template-google-sheets-premium-dalam-1-paket,2026-11-26
-53,18,Website Portfolio Freelancer Premium,Sekali bayar,899000.0,Sekali,Template website portofolio freelancer; harga normal Rp3.500.000,Tanpa refund; harga promo,https://www.templatku.com/produk/website-portfolio-freelancer-premium,2026-11-26
-54,19,Paket Video E-learning 1 Bulan,Langganan,29000.0,Bulanan,Akses semua 1.400+ materi; sertifikat; komunitas,Harga promo; normal Rp350.000,https://myskill.id/e-learning,2026-11-26
-55,19,Paket Video E-learning 12 Bulan,Langganan,179000.0,Tahunan,Akses semua materi; setara Rp14.917/bulan,Harga promo; normal Rp4.200.000; paket 6 bulan Rp99.000,https://myskill.id/e-learning,2026-11-26
-56,20,Lite,Langganan,35000.0,Bulanan,300 balasan AI/bulan; 1 nomor WA; 1 anggota tim; 50 produk; 1 GB penyimpanan,Belum termasuk PPN 11%; biaya pesan WhatsApp Official ditagih Meta; top-up kredit tersedia,https://www.sahut.id/pricing,2026-11-26
-57,20,Starter,Langganan,75000.0,Bulanan,500 balasan AI/bulan; 2 nomor WA; 3 anggota tim; 150 produk; 2 GB; WABA resmi,Belum termasuk PPN 11%; biaya pesan WhatsApp Official ditagih Meta,https://www.sahut.id/pricing,2026-11-26
-58,20,Growth,Langganan,199000.0,Bulanan,1.500 balasan AI/bulan; 5 nomor WA; 5 anggota tim; 500 produk; 5 GB; multi-agen AI,Belum termasuk PPN 11%; biaya pesan WhatsApp Official ditagih Meta,https://www.sahut.id/pricing,2026-11-26
-59,20,Business,Langganan,399000.0,Bulanan,5.000 balasan AI/bulan; 12 nomor WA; 10 anggota tim; 2.000 produk; 15 GB; webhook & API,Belum termasuk PPN 11%; biaya pesan WhatsApp Official ditagih Meta,https://www.sahut.id/pricing,2026-11-26
-60,21,Lite,Langganan,390000.0,Bulanan,CS WhatsApp; kontak unlimited; auto-jawab FAQ dan quick reply,Top-up kuota balasan; trial 7 hari; diskon 20% untuk tahunan,https://www.spicelab.ai/pricing,2026-11-26
-61,21,Pro,Langganan,1490000.0,Bulanan,3.000 balasan AI/bulan; 40 foto + 4 video AI/bulan; tabel customer; AI content studio,Top-up kuota balasan; trial 7 hari; diskon 20% untuk tahunan,https://www.spicelab.ai/pricing,2026-11-26
-62,21,Suite,Langganan,4900000.0,Bulanan,Mesin konten + closing; Instagram auto-post; auto-balas komentar; follow-up closing,Status segera; top-up kuota; diskon 20% untuk tahunan,https://www.spicelab.ai/pricing,2026-11-26
-63,21,Enterprise,Langganan,15000000.0,Bulanan,"Harga mulai dari; lead-gen, CRM + retargeting, API, Founder Mode",Harga custom sesuai skala; status segera,https://www.spicelab.ai/pricing,2026-11-26
-64,22,Starter,Langganan,79000.0,Bulanan,1 toko online; 1.000 pesan/bulan; AI chatbot 24 jam; katalog; human takeover,WA Dedicated terpisah; diskon 25% untuk tahunan,https://mahirusaha.com/,2026-11-26
-65,22,Pro,Langganan,249000.0,Bulanan,3 toko online; 5.000 pesan/bulan; broadcast; CRM; laporan harian,WA Dedicated terpisah; sync Shopee/TikTok masih segera; diskon 25% tahunan,https://mahirusaha.com/,2026-11-26
-66,22,Bisnis,Langganan,549000.0,Bulanan,10 toko online; 20.000 pesan/bulan; multi-agent CS; analytics advanced,WA Dedicated terpisah; sync Shopee/TikTok masih segera; diskon 25% tahunan,https://mahirusaha.com/,2026-11-26
-67,23,Broadcast,Langganan,700000.0,Bulanan,1 agen; sampai 3.000 MAU; broadcast dan call; komunikasi dua arah,Belum termasuk biaya WhatsApp broadcast dan call,https://mobichat.id/,2026-11-26
-68,23,Engage,Langganan,1500000.0,Bulanan,5 agen; MAU tanpa batas; omnichannel 5 channel; workflow & chatbot; CRM Lite,Belum termasuk biaya WhatsApp broadcast dan call,https://mobichat.id/,2026-11-26
-69,23,Scale,Langganan,3500000.0,Bulanan,5 agen; MAU tanpa batas; CRM Advance; AI automation; marketing CAPI & TikTok Ads,Belum termasuk biaya WhatsApp broadcast dan call; harga mulai dari,https://mobichat.id/,2026-11-26
+1,1,Chat Pro,Langganan,,Bulanan,"1 WABA, 3.000 MAU, 15.000 AI credits, 5 seats",Harga via sales; biaya pesan Meta terpisah; belum termasuk PPN,https://cekat.ai/pricing,2026-11-27
+2,1,Chat Business,Langganan,,Bulanan,"3 WABA, 10.000 MAU, 50.000 AI credits, 7 seats",Harga via sales; biaya pesan Meta terpisah,https://cekat.ai/pricing,2026-11-27
+3,1,Chat Enterprise,Langganan,,Bulanan,"5 WABA, 30.000 MAU, 150.000 AI credits, 10 seats",Harga via sales; biaya pesan Meta terpisah,https://cekat.ai/pricing,2026-11-27
+4,2,Broadcast,Langganan,750000.0,Bulanan,"WhatsApp API resmi, chatbot FAQ, broadcast, campaign",Biaya per pesan Meta; add-on kuota AI,https://qontak.com/harga/,2026-11-27
+5,2,Service Suite,Langganan,2000000.0,Bulanan,"Tier Plus: 100 AI dialog/bulan, 1 AI agent aktif",Biaya per pesan Meta; tier Ultimate lebih mahal,https://qontak.com/harga/,2026-11-27
+6,2,Sales Suite,Langganan,2000000.0,Bulanan,"Tier Plus: pipeline, task management, CRM report",Biaya per pesan Meta; tier Ultimate lebih mahal,https://qontak.com/harga/,2026-11-27
+7,2,Qontak 360,Langganan,,Bulanan,"Seluruh kemampuan platform, harga via sales",Biaya per pesan Meta,https://qontak.com/harga/,2026-11-27
+8,3,Qiscus Custom,Per pengguna,,Bulanan,Dihitung per agent dan jumlah pelanggan aktif per bulan,Biaya pesan WhatsApp per pesan; add-on channel,https://qiscus.com/pricing,2026-11-27
+9,4,Lite,Langganan,299000.0,Bulanan,"Gratis 1.000 percakapan/bulan, omnichannel, insight, broadcast report",Biaya percakapan tambahan dan biaya pesan Meta,https://waofficial.botika.online/pricing,2026-11-27
+10,4,Pro,Langganan,,Bulanan,"Kustomisasi lanjutan, keamanan, support 24 jam",Harga via sales,https://waofficial.botika.online/pricing,2026-11-27
+11,5,Lite,Langganan,499000.0,Bulanan,Khusus WhatsApp; promo 50 toko pertama (normal Rp900.000),Belum termasuk PPN; biaya pesan WhatsApp,https://canggih.ai/harga,2026-11-27
+12,5,Starter,Langganan,1500000.0,Bulanan,AI di WhatsApp dan DM Instagram,Belum termasuk PPN; biaya pesan WhatsApp; setup mandiri gratis,https://canggih.ai/harga,2026-11-27
+13,5,Business,Langganan,2500000.0,Bulanan,Kapasitas chat dan otomasi lebih besar,Belum termasuk PPN; biaya pesan WhatsApp,https://canggih.ai/harga,2026-11-27
+14,5,Growth,Langganan,3000000.0,Bulanan,Kapasitas tertinggi; integrasi express gratis saat ini,Belum termasuk PPN; biaya pesan WhatsApp,https://canggih.ai/harga,2026-11-27
+15,6,Paket 1 WhatsApp,Langganan,99000.0,Bulanan,"1 akun WA, unlimited admin, kontak, pesan, chatbot",Biaya pesan WhatsApp; harga tahunan berbeda,https://dripsender.id/pricing,2026-11-27
+16,6,Paket 3 WhatsApp,Langganan,129000.0,Bulanan,"3 akun WA, unlimited admin, pesan, chatbot",Biaya pesan WhatsApp; harga tahunan berbeda,https://dripsender.id/pricing,2026-11-27
+17,6,Paket 5 WhatsApp,Langganan,149000.0,Bulanan,"5 akun WA, unlimited admin, pesan, chatbot",Biaya pesan WhatsApp; harga tahunan berbeda,https://dripsender.id/pricing,2026-11-27
+18,6,Managed Service AI 1 WA,Langganan,399000.0,Bulanan,"Tim Dripsender mengelola setup, strategi, dan eksekusi AI",Minimum kontrak 5 bulan; biaya pesan WhatsApp,https://dripsender.id/pricing,2026-11-27
+19,6,Managed Service AI 5 WA,Langganan,999000.0,Bulanan,5 akun WA dengan tim Dripsender,Minimum kontrak 5 bulan; biaya pesan WhatsApp,https://dripsender.id/pricing,2026-11-27
+21,8,Kata.ai Enterprise,Langganan,,Bulanan,"Harga sesuai kebutuhan, umumnya kontrak enterprise",Implementasi dan integrasi terpisah,https://kata.ai,2026-11-27
+22,9,Intern,Langganan,270000.0,Bulanan,1.500 coins/bulan; sekitar 8 jam meeting online,Coins tambahan jika melebihi kuota,https://meeting.ai/id,2026-11-27
+23,9,Manager,Langganan,540000.0,Bulanan,3.000 coins/bulan; sekitar 16 jam meeting online,Coins tambahan jika melebihi kuota,https://meeting.ai/id,2026-11-27
+24,9,Director,Langganan,900000.0,Bulanan,5.000 coins/bulan; rekaman tatap muka tanpa batas,Coins tambahan jika melebihi kuota,https://meeting.ai/id,2026-11-27
+25,10,Proyek pengembangan software,Proyek,,Sekali,Lingkup dan harga per proyek; tidak dipublikasikan di situs,Maintenance dan biaya API terpisah,https://sagaratechnology.com,2026-11-27
+26,11,Kelas premium,Sekali bayar,250000.0,Sekali,Akses satu kelas; katalog menyebut Rp250.000/kelas,Fee kreator tidak dipublikasikan,https://kelas.com,2026-11-27
+27,12,Nano,Langganan,22000.0,Bulanan,1.000 pesan/bulan; riwayat pesan 2 hari,,https://wablas.com/pricing,2026-11-27
+28,12,Lite,Langganan,36000.0,Bulanan,5.000 pesan/bulan; riwayat 3 hari; kontrak 12 bulan Rp240.000,,https://wablas.com/pricing,2026-11-27
+29,12,Small,Langganan,69000.0,Bulanan,10.000 pesan/bulan; riwayat 4 hari; kontrak 12 bulan Rp456.000,,https://wablas.com/pricing,2026-11-27
+30,12,Medium,Langganan,86000.0,Bulanan,Pesan tak terbatas; riwayat 5 hari; kontrak 12 bulan Rp564.000,,https://wablas.com/pricing,2026-11-27
+31,12,Large,Langganan,119000.0,Bulanan,Pesan tak terbatas; riwayat 5 hari; kontrak 12 bulan Rp780.000,,https://wablas.com/pricing,2026-11-27
+32,12,Enterprise,Langganan,139000.0,Bulanan,Pesan tak terbatas; riwayat 5 hari; kontrak 12 bulan Rp912.000,,https://wablas.com/pricing,2026-11-27
+33,13,Starter,Langganan,249000.0,Bulanan,"Single outlet, maks 2 terminal; kasir, inventori, laporan, QRIS",Belum termasuk PPN; perangkat dan jumlah karyawan dihitung terpisah,https://majoo.id/harga,2026-11-27
+34,13,Advance,Langganan,499000.0,Bulanan,"Multi outlet, maks 3 terminal; akuntansi lengkap, CRM, order online",Belum termasuk PPN; perangkat dihitung terpisah,https://majoo.id/harga,2026-11-27
+35,13,Prime,Langganan,999000.0,Bulanan,"Multi outlet, maks 5 terminal; payroll, marketplace, fitur otomasi",Belum termasuk PPN; perangkat dihitung terpisah,https://majoo.id/harga,2026-11-27
+36,13,Prime +,Langganan,,Bulanan,"Konsultasi harga; gudang, workflow, kustomisasi layout",Harga via sales; belum termasuk PPN,https://majoo.id/harga,2026-11-27
+37,14,Starter,Langganan,49000.0,Bulanan,50.000 pesan/bulan; 2.000 penerima broadcast; 3 anggota tim; 500 kredit AI; 1 nomor WA; 1 AI Agent,"Biaya pesan broadcast Meta terpisah; diskon 15% untuk 6 bulan, gratis 2 bulan untuk tahunan",https://convia.id/#pricing,2026-11-27
+38,14,Pro,Langganan,149000.0,Bulanan,200.000 pesan/bulan; 20.000 penerima broadcast; 5 anggota tim; 1.000 kredit AI; 3 AI Agent,Biaya pesan broadcast Meta terpisah; retensi pesan 90 hari,https://convia.id/#pricing,2026-11-27
+39,14,Business,Langganan,299000.0,Bulanan,1.000.000 pesan/bulan; 100.000 penerima broadcast; 10 anggota tim; 3.000 kredit AI; 5 AI Agent,Biaya pesan broadcast Meta terpisah; retensi pesan tanpa batas,https://convia.id/#pricing,2026-11-27
+40,15,UMKM,Langganan,35000.0,Bulanan,4 nomor WA; 3 user; 5.000 pesan/bulan; 1.000 kontak; 3 chatbot otomatis,Biaya iklan Smart Digital Advertising terpisah; tersedia siklus 1-12 bulan,https://weaku.app/harga,2026-11-27
+41,15,Pro,Langganan,60000.0,Bulanan,6 nomor WA; 4 user; 10.000 pesan/bulan; 2.000 kontak; 6 chatbot otomatis,Biaya iklan Smart Digital Advertising terpisah; tersedia siklus 1-12 bulan,https://weaku.app/harga,2026-11-27
+42,15,Max,Langganan,99000.0,Bulanan,12 nomor WA; 6 user; pesan tanpa batas; kontak tanpa batas; chatbot tanpa batas; Official WABA,Top-up saldo pesan fleksibel; biaya iklan Smart Digital Advertising terpisah,https://weaku.app/harga,2026-11-27
+43,16,Lite,Langganan,149000.0,Bulanan,2 user; 10.000 kontak; tanpa fitur AI,"Biaya percakapan Meta terpisah; add-on user Rp59.000, nomor Rp49.000, kontak Rp29.000",https://www.firstcrm.id/#harga,2026-11-27
+44,16,Starter,Langganan,349000.0,Bulanan,3 user; 25.000 kontak; 1.500 kredit AI/bulan,Biaya percakapan Meta terpisah; top-up 1.000 kredit Rp129.000,https://www.firstcrm.id/#harga,2026-11-27
+45,16,Growth,Langganan,699000.0,Bulanan,7 user; 75.000 kontak; 3.500 kredit AI/bulan,Biaya percakapan Meta terpisah; modul AI tambahan Rp99.000-Rp849.000,https://www.firstcrm.id/#harga,2026-11-27
+46,16,Scale,Langganan,1299000.0,Bulanan,15 user; 150.000 kontak; 7.000 kredit AI/bulan,Biaya percakapan Meta terpisah; modul AI tambahan Rp99.000-Rp849.000,https://www.firstcrm.id/#harga,2026-11-27
+47,17,Growth,Langganan,640000.0,Bulanan,10.000 kredit AI; sekitar 2.000 jawaban; 3 user; 1 AI agent; 15.000 broadcast,Ditagih tahunan; pengguna tambahan tidak tersedia,https://corefreelancers.id/ai-agent-whatsapp/#harga,2026-11-27
+48,17,Pro,Langganan,1400000.0,Bulanan,30.000 kredit AI; sekitar 6.000 jawaban; 5 user; 2 AI agent; broadcast tanpa batas,Ditagih tahunan; pengguna tambahan Rp360.000/bulan,https://corefreelancers.id/ai-agent-whatsapp/#harga,2026-11-27
+49,17,Business,Langganan,3700000.0,Bulanan,80.000 kredit AI; sekitar 16.000 jawaban; 5 user; AI agent tanpa batas,Ditagih tahunan; pengguna tambahan Rp1.020.000/bulan,https://corefreelancers.id/ai-agent-whatsapp/#harga,2026-11-27
+50,18,Pitch Deck Startup Indonesia - Bilingual,Sekali bayar,195000.0,Sekali,Template pitch deck; harga normal Rp595.000,Tanpa refund; harga promo,https://www.templatku.com/produk/pitch-deck-startup-indonesia-bilingual,2026-11-27
+51,18,Paket Branding Kit UMKM Lengkap,Sekali bayar,245000.0,Sekali,Paket branding UMKM; harga normal Rp695.000,Tanpa refund; harga promo,https://www.templatku.com/produk/paket-branding-kit-umkm-lengkap,2026-11-27
+52,18,3 Template Google Sheets Premium,Sekali bayar,99000.0,Sekali,Tiga template Google Sheets; harga normal Rp300.000,Tanpa refund; harga promo,https://www.templatku.com/produk/3-template-google-sheets-premium-dalam-1-paket,2026-11-27
+53,18,Website Portfolio Freelancer Premium,Sekali bayar,899000.0,Sekali,Template website portofolio freelancer; harga normal Rp3.500.000,Tanpa refund; harga promo,https://www.templatku.com/produk/website-portfolio-freelancer-premium,2026-11-27
+54,19,Paket Video E-learning 1 Bulan,Langganan,29000.0,Bulanan,Akses semua materi; sertifikat; komunitas,Harga promo; normal Rp350.000,https://myskill.id/e-learning,2026-11-27
+55,19,Paket Video E-learning 12 Bulan,Langganan,179000.0,Tahunan,Akses semua materi; setara Rp14.917/bulan,Harga promo; normal Rp4.200.000; paket 6 bulan Rp99.000,https://myskill.id/e-learning,2026-11-27
+56,20,Lite,Langganan,35000.0,Bulanan,300 balasan AI/bulan; 1 nomor WA; 1 anggota tim; 50 produk; 1 GB penyimpanan,Belum termasuk PPN 11%; biaya pesan WhatsApp Official ditagih Meta; top-up kredit tersedia,https://www.sahut.id/pricing,2026-11-27
+57,20,Starter,Langganan,75000.0,Bulanan,500 balasan AI/bulan; 2 nomor WA; 3 anggota tim; 150 produk; 2 GB; WABA resmi,Belum termasuk PPN 11%; biaya pesan WhatsApp Official ditagih Meta,https://www.sahut.id/pricing,2026-11-27
+58,20,Growth,Langganan,199000.0,Bulanan,1.500 balasan AI/bulan; 5 nomor WA; 5 anggota tim; 500 produk; 5 GB; multi-agen AI,Belum termasuk PPN 11%; biaya pesan WhatsApp Official ditagih Meta,https://www.sahut.id/pricing,2026-11-27
+59,20,Business,Langganan,399000.0,Bulanan,5.000 balasan AI/bulan; 12 nomor WA; 10 anggota tim; 2.000 produk; 15 GB; webhook & API,Belum termasuk PPN 11%; biaya pesan WhatsApp Official ditagih Meta,https://www.sahut.id/pricing,2026-11-27
+60,21,Lite,Langganan,390000.0,Bulanan,CS WhatsApp; kontak unlimited; auto-jawab FAQ dan quick reply,Top-up kuota balasan; trial 7 hari; diskon 20% untuk tahunan,https://www.spicelab.ai/pricing,2026-11-27
+61,21,Pro,Langganan,1490000.0,Bulanan,3.000 balasan AI/bulan; 40 foto + 4 video AI/bulan; tabel customer; AI content studio,Top-up kuota balasan; trial 7 hari; diskon 20% untuk tahunan,https://www.spicelab.ai/pricing,2026-11-27
+62,21,Suite,Langganan,4900000.0,Bulanan,Mesin konten + closing; Instagram auto-post; auto-balas komentar; follow-up closing,Status segera; top-up kuota; diskon 20% untuk tahunan,https://www.spicelab.ai/pricing,2026-11-27
+63,21,Enterprise,Langganan,15000000.0,Bulanan,"Harga mulai dari; lead-gen, CRM + retargeting, API, Founder Mode",Harga custom sesuai skala; status segera,https://www.spicelab.ai/pricing,2026-11-27
+64,22,Starter,Langganan,79000.0,Bulanan,1 toko online; 1.000 pesan/bulan; AI chatbot 24 jam; katalog; human takeover,WA Dedicated terpisah; diskon 25% untuk tahunan,https://mahirusaha.com/,2026-11-27
+65,22,Pro,Langganan,249000.0,Bulanan,3 toko online; 5.000 pesan/bulan; broadcast; CRM; laporan harian,WA Dedicated terpisah; sync Shopee/TikTok masih segera; diskon 25% tahunan,https://mahirusaha.com/,2026-11-27
+66,22,Bisnis,Langganan,549000.0,Bulanan,10 toko online; 20.000 pesan/bulan; multi-agent CS; analytics advanced,WA Dedicated terpisah; sync Shopee/TikTok masih segera; diskon 25% tahunan,https://mahirusaha.com/,2026-11-27
+67,23,Broadcast,Langganan,700000.0,Bulanan,1 agen; sampai 3.000 MAU; broadcast dan call; komunikasi dua arah,Belum termasuk biaya WhatsApp broadcast dan call,https://mobichat.id/,2026-11-27
+68,23,Engage,Langganan,1500000.0,Bulanan,5 agen; MAU tanpa batas; omnichannel 5 channel; workflow & chatbot; CRM Lite,Belum termasuk biaya WhatsApp broadcast dan call,https://mobichat.id/,2026-11-27
+69,23,Scale,Langganan,3500000.0,Bulanan,5 agen; MAU tanpa batas; CRM Advance; AI automation; marketing CAPI & TikTok Ads,Belum termasuk biaya WhatsApp broadcast dan call; harga mulai dari,https://mobichat.id/,2026-11-27
+70,1,Chat Custom,Langganan,,Bulanan,"WABA, MAU, AI credits, dan seats disesuaikan; integrasi custom",Harga via sales; belum termasuk PPN; biaya pesan Meta terpisah,https://cekat.ai/pricing,2026-11-27
+71,24,Bisnis,Langganan,560000.0,Bulanan,"WA Business; 5.000 AI respons/bulan; 3 admin; livechat, broadcast, payment gateway",Belum termasuk pajak dan biaya kanal; WA Official baru di paket Pro,https://eva.id/pricing,2026-11-27
+72,24,Pro,Langganan,1475000.0,Bulanan,"WA Official; 15.000 AI respons/bulan; 7 admin; livechat, broadcast, payment gateway",Belum termasuk pajak dan biaya kanal,https://eva.id/pricing,2026-11-27
+73,24,Custom,Langganan,,Bulanan,"Channel, volume respons, agent, integrasi API, dan fitur khusus",Harga via sales,https://eva.id/pricing,2026-11-27
+74,24,Open API Access,Add-on,5000000.0,Bulanan,Akses API tanpa batas; bonus 20.000 AI respons/bulan,Function development Rp5 juta/function; maintenance Rp500 ribu/function/bulan,https://eva.id/pricing,2026-11-27
+75,25,Free,Freemium,0.0,Bulanan,100 balasan AI sekali pakai; 700 pesan + 50 media/bulan; 1 nomor; 200 produk; 200 MB,Pesan diberi watermark Sent Via Jalinara,https://jalinara.id/#harga,2026-11-27
+76,25,Personal,Langganan,390000.0,Tahunan,Setara Rp32.500/bulan; 1 nomor; 5.000 pesan + 500 media/bulan; 200 balasan AI/bulan; 300 MB,Tanpa kontrak; bayar QRIS; top-up kredit AI mulai Rp9.900,https://jalinara.id/#harga,2026-11-27
+77,25,Tim,Langganan,790000.0,Tahunan,Setara Rp65.833/bulan; 2 nomor; 12.000 pesan/bulan; 500 balasan AI/bulan; 3 agen CS; 2 AI agent; 500 MB,Tanpa kontrak; top-up kredit AI mulai Rp9.900; tambah agen Rp35 ribu/bulan,https://jalinara.id/#harga,2026-11-27
+78,25,Bisnis,Langganan,1490000.0,Tahunan,Setara Rp124.167/bulan; CRM lead dan tagihan; 3 nomor; 30.000 pesan/bulan; 2.000 balasan AI; 3 AI agent; 1 GB,Tanpa kontrak; tambah nomor Rp49.900/bulan,https://jalinara.id/#harga,2026-11-27
+79,25,Eksekutif,Langganan,2990000.0,Tahunan,"Setara Rp249.167/bulan; 10 nomor; 150.000 pesan/bulan; 5.000 balasan AI; 10 AI agent; 1,5 GB",Tanpa kontrak; analitik lanjutan per jam dan per agen,https://jalinara.id/#harga,2026-11-27
+80,25,Prioritas,Langganan,5990000.0,Tahunan,Setara Rp499.167/bulan; 12 nomor; 300.000 pesan/bulan; 20.000 balasan AI; 12 AI agent; 2 GB,Tanpa kontrak; untuk agensi atau tim CS besar,https://jalinara.id/#harga,2026-11-27
+81,26,Basic,Langganan,49000.0,Bulanan,1 nomor WA; 2.000 token pesan/bulan; 1.000 kontak; 1 akun WABA co-ex; 5.000 broadcast WABA/bulan,Diskon tahunan hingga 50% (mulai Rp30.625/bulan); biaya template WABA ditagih Meta,https://moonwa.id/#landingPricing,2026-11-27
+82,26,Enterprise,Langganan,99000.0,Bulanan,3 nomor WA; token pesan tanpa batas; kontak tanpa batas; 3 akun WABA co-ex; broadcast WABA tanpa batas,Diskon tahunan hingga 50%; biaya template WABA ditagih Meta,https://moonwa.id/#landingPricing,2026-11-27
+83,27,Trial,Trial,0.0,10 hari,1 akun tim; 5 template pesan; tanpa cek ongkir dan Google Sheet,Tanpa kartu kredit; upgrade kapan saja,https://www.replai.id/harga,2026-11-27
+84,27,Basic,Langganan,299000.0,Bulanan,3 WA personal + 3 WABA; blast WA/email tanpa batas; 500 scrap data/bulan; chatbot tanpa batas + 5 AI training; 3 akun tim,Biaya percakapan Meta di luar paket,https://www.replai.id/harga,2026-11-27
+85,27,Pro,Langganan,499000.0,Bulanan,7 WA personal + 7 WABA; 3 Instagram + 3 Messenger + 3 Telegram; 3.000 scrap data/bulan; 50 AI training; 7 akun tim,Biaya percakapan Meta di luar paket,https://www.replai.id/harga,2026-11-27
+86,27,Enterprise,Langganan,,Bulanan,"Lebih dari 7 akun, volume tinggi, integrasi API khusus, white-label",Harga via sales,https://www.replai.id/harga,2026-11-27
+87,28,Starter,Langganan,349000.0,Bulanan,AI agent; omnichannel; widget chat; knowledge base; riwayat percakapan,"CRM, otomatisasi, dan kolaborasi tim baru di paket Growth",https://zonaai.id/harga,2026-11-27
+88,28,Growth,Langganan,749000.0,Bulanan,Semua fitur Starter; CRM; alur otomatisasi; kolaborasi tim; pengumpulan prospek,Analitik lanjutan dan API baru di paket Business,https://zonaai.id/harga,2026-11-27
+89,28,Business,Langganan,1499000.0,Bulanan,Semua fitur Growth; analitik lanjutan; akses API & webhook; dukungan prioritas,Kuota percakapan tidak dipublikasikan,https://zonaai.id/harga,2026-11-27
